@@ -1,0 +1,41 @@
+$light-grey: #e6e8e6;
+$grey: #ced0ce;
+$teal: #9fb8ad;
+$dark-green: #475841;
+$dark-grey: #3f403f;
+
+body {
+  padding-top: 0px;
+}
+
+.root-page {
+
+  .navbar-brand {
+    font-size: 28px;
+  }
+
+  .blurb {
+    
+    p {
+      padding-top: 20px;
+      font-style: italic;
+    }
+
+    span {
+      padding-top: 50px;
+      font-size: 100px;
+    }
+  }
+
+  .jumbotron {
+    background-image: url('../images/ottawa.jpg');
+    background-size: 100% auto;
+    background-position: 0 45%;
+    
+    h1 {
+      font-family: 'Roboto Condensed', sans-serif;
+      color: black;
+      padding: 60px 0 400px;
+    }
+  }
+}
