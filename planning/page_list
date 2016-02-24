@@ -1,0 +1,20 @@
+### GENERAL ###
+/ (landing/login page)
+/about
+/logout
+
+  ### TRIPS and ACTIVITIES ###
+  /trips (User's trips -- also the default logged in page)
+    /trips/new
+    /trips/:trip_id (Individual trip page)
+    /trips/:trip_id/update
+    /trips/:trip_id/delete
+        /trips/:trip_id/activity/new
+        /trips/:trip_id/activity/:activity_id (Individual activity page)
+        /trips/:trip_id/activity/:activity_id/update
+        /trips/:trip_id/activity/:activity_id/delete
+
+  ### USERS ###    
+  /profile/:user_id (User/friend's profile)
+  /profile/:user_id/update
+
