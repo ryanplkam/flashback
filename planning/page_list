@@ -9,7 +9,7 @@
     /trips/:trip_id (Individual trip page)(https://wireframe.cc/UKv08n)
     /trips/:trip_id/update
     /trips/:trip_id/delete
-        /trips/:trip_id/activity/new (https://wireframe.cc/nANz1f)
+        /trips/:trip_id/activity/new (https://wireframe.cc/nANz1f)  
         /trips/:trip_id/activity/:activity_id (https://wireframe.cc/aTRNmo)
         /trips/:trip_id/activity/:activity_id/update (https://wireframe.cc/nANz1f)
         /trips/:trip_id/activity/:activity_id/delete (https://wireframe.cc/cqgoRd)

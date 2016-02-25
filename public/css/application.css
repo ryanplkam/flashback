@@ -1,0 +1,39 @@
+body {
+  padding-top: 0px; }
+
+.navbar-brand {
+  font-size: 28px; }
+
+.below-navbar {
+  padding-top: 51px; }
+
+.fixed-scroll {
+  position: fixed; }
+
+.root-page #navbar button {
+  border: none; }
+.root-page #navbar button[id="sign-in-facebook"] {
+  background-color: #3B5998; }
+.root-page #navbar button[id="sign-in-google"] {
+  background-color: #DC4E41; }
+.root-page .blurb p {
+  padding-top: 20px;
+  font-style: italic; }
+.root-page .blurb span {
+  padding-top: 50px;
+  font-size: 100px; }
+.root-page .jumbotron {
+  background-image: url("../images/ottawa.jpg");
+  background-size: 100% auto;
+  background-position: 0 45%; }
+  .root-page .jumbotron h1 {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: black;
+    padding: 60px 0 400px; }
+
+.trips-page .bootcards-cards {
+  margin-top: 20px; }
+.trips-page .new-trip-card h1 {
+  margin-bottom: 20px; }
+
+/*# sourceMappingURL=application.css.map */
