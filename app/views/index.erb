@@ -12,24 +12,39 @@
           </button>
           <a class="navbar-brand" href="/">Flashback</a>
         </div>
+
         <div id='navbar' class='navbar-collapse collapse'>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="/">About</a></li>
-            <li class="dropdown">
-              <a href="http://www.jquery2dotnet.com" class="dropdown-toggle" data-toggle="dropdown">Sign in <b class="caret"></b></a>
-              <ul class="dropdown-menu" style="padding: 15px;min-width: 250px;">
-                <li>
-                  <button class="btn btn-primary btn-block" type="button" id="sign-in-facebook" value="Sign In with Google">
-                  <img src='../images/icon-facebook.svg'>
-                  </button>
-                  <button class="btn btn-primary btn-block" type="button" id="sign-in-google" value="Sign In with Twitter">
-                  <img src='../images/icon-google.svg'>
-                  </button>
+            <% if user_login? %>
+              <li class="dropdown">
+                  <a href="http://www.jquery2dotnet.com" class="dropdown-toggle" data-toggle="dropdown"> Hello, <%= User.find(session[:user]).name %> <b class="caret"></b></a>
+                  <ul class="dropdown-menu" style="padding: 15px;min-width: 250px;">
+                    <li>
+                      <a href="/users/<%= User.find(session[:user]).id %>/profile">Profile</a>
+                      <a href="/users/<%= User.find(session[:user]).id %>/trips">Trips</a>
+                      <a href="/logout">Logout</a>
+                    </li>
+                  </ul>
                 </li>
-              </ul>
-            </li>
+            <% else %>
+              <li class="dropdown">
+                <a href="http://www.jquery2dotnet.com" class="dropdown-toggle" data-toggle="dropdown">Sign in <b class="caret"></b></a>
+                <ul class="dropdown-menu" style="padding: 15px;min-width: 250px;">
+                  <li>
+                    <a class="btn btn-primary btn-block" type="button" id="sign-in-facebook" href="auth/facebook">
+                    <img src='../images/icon-facebook.svg'>
+                    </a>
+                    <a class="btn btn-primary btn-block" type="button" id="sign-in-google" href="#">
+                    <img src='../images/icon-google.svg'>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            <% end %>
           </ul>
         </div>
+
         <!-- end nav collapse -->
       </div>
     </div>

@@ -13,6 +13,8 @@ gem 'pg'
 gem 'puma'
 gem 'tux'
 
+gem 'omniauth-facebook'
+
 group :development, :test do
   gem 'pry'
   gem 'shotgun'

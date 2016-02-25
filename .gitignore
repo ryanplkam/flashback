@@ -7,3 +7,6 @@ db/*.sqlite3-journal
 .DS_Store
 public/assets
 public/.sass-cache/**
+.gitignore
+app/views/test.erb
+config/secret.rb
