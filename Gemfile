@@ -1,6 +1,8 @@
 # A sample Gemfile
 source "https://rubygems.org"
 
+gem 'bourbon'
+
 gem 'rake'
 gem 'activesupport'
 
