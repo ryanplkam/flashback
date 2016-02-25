@@ -8,10 +8,34 @@ body {
   padding-top: 0px;
 }
 
-.root-page {
+.navbar-brand {
+  font-size: 28px;
+}
 
-  .navbar-brand {
-    font-size: 28px;
+.below-navbar {
+  padding-top: 51px;
+}
+
+.fixed-scroll {
+  position: fixed;
+}
+
+.root-page {
+  
+  #navbar {
+    
+    button {
+      border: none;
+    }
+
+    button[id="sign-in-facebook"] {
+      background-color: #3B5998;
+    }
+
+    button[id="sign-in-google"] {
+      background-color: #DC4E41;
+    }
+
   }
 
   .blurb {
@@ -38,4 +62,16 @@ body {
       padding: 60px 0 400px;
     }
   }
+}
+
+.trips-page {
+
+  .bootcards-cards {
+    margin-top: 20px; 
+  }
+
+  .new-trip-card h1 {
+    margin-bottom: 20px;
+  }
+
 }

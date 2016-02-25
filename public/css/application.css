@@ -1,8 +1,21 @@
 body {
   padding-top: 0px; }
 
-.root-page .navbar-brand {
+.navbar-brand {
   font-size: 28px; }
+
+.below-navbar {
+  padding-top: 51px; }
+
+.fixed-scroll {
+  position: fixed; }
+
+.root-page #navbar button {
+  border: none; }
+.root-page #navbar button[id="sign-in-facebook"] {
+  background-color: #3B5998; }
+.root-page #navbar button[id="sign-in-google"] {
+  background-color: #DC4E41; }
 .root-page .blurb p {
   padding-top: 20px;
   font-style: italic; }
@@ -17,5 +30,10 @@ body {
     font-family: 'Roboto Condensed', sans-serif;
     color: black;
     padding: 60px 0 400px; }
+
+.trips-page .bootcards-cards {
+  margin-top: 20px; }
+.trips-page .new-trip-card h1 {
+  margin-bottom: 20px; }
 
 /*# sourceMappingURL=application.css.map */

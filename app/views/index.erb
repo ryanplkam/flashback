@@ -1,46 +1,65 @@
 <div class='root-page'>
-  <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-      
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class='row'>
+      <div class='col-md-12'>
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="/">Flashback</a>
+          </button>
+          <a class="navbar-brand" href="/">Flashback</a>
+        </div>
+        <div id='navbar' class='navbar-collapse collapse'>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/">About</a></li>
+            <li class="dropdown">
+              <a href="http://www.jquery2dotnet.com" class="dropdown-toggle" data-toggle="dropdown">Sign in <b class="caret"></b></a>
+              <ul class="dropdown-menu" style="padding: 15px;min-width: 250px;">
+                <li>
+                  <button class="btn btn-primary btn-block" type="button" id="sign-in-facebook" value="Sign In with Google">
+                  <img src='../images/icon-facebook.svg'>
+                  </button>
+                  <button class="btn btn-primary btn-block" type="button" id="sign-in-google" value="Sign In with Twitter">
+                  <img src='../images/icon-google.svg'>
+                  </button>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <!-- end nav collapse -->
       </div>
-
-      <div id="navbar" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="/about">About</a></li>
-          <li class="active"><a href="./">Login<span class="sr-only">(current)</span></a></li>
-        </ul>
-      </div><!--/.nav-collapse -->
-
-    </div>
-  </nav>
-
-  <div class="jumbotron">
-    <div class='container'>
-      <h1>Relive your travels.</h1>
     </div>
   </div>
-
-  <div class='container text-center'>
+</nav>
+<div class="jumbotron">
+  <div class='container'>
+    <div class='row'>
+      <div class='col-md-12'>
+        <h1>Relive your travels.</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<div class='container text-center'>
+  <div class='row'>
     <div class='blurb col-md-4'>
       <span class='glyphicon glyphicon-globe'></span>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel purus vel felis dapibus euismod. In quis tortor at lectus ultricies sodales in sed eros. Aenean congue enim sapien, vel mollis nisl feugiat a. Sed massa metus, efficitur vel diam ut, auctor eleifend urna.<p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel purus vel felis dapibus euismod. In quis tortor at lectus ultricies sodales in sed eros. Aenean congue enim sapien, vel mollis nisl feugiat a. Sed massa metus, efficitur vel diam ut, auctor eleifend urna.
+      <p>
     </div>
     <div class='blurb col-md-4'>
       <span class='blurb glyphicon glyphicon-user'></span>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel purus vel felis dapibus euismod. In quis tortor at lectus ultricies sodales in sed eros. Aenean congue enim sapien, vel mollis nisl feugiat a. Sed massa metus, efficitur vel diam ut, auctor eleifend urna.<p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel purus vel felis dapibus euismod. In quis tortor at lectus ultricies sodales in sed eros. Aenean congue enim sapien, vel mollis nisl feugiat a. Sed massa metus, efficitur vel diam ut, auctor eleifend urna.
+      <p>
     </div>
     <div class='blurb col-md-4'>
       <span class='blurb glyphicon glyphicon-camera'></span>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel purus vel felis dapibus euismod. In quis tortor at lectus ultricies sodales in sed eros. Aenean congue enim sapien, vel mollis nisl feugiat a. Sed massa metus, efficitur vel diam ut, auctor eleifend urna.<p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel purus vel felis dapibus euismod. In quis tortor at lectus ultricies sodales in sed eros. Aenean congue enim sapien, vel mollis nisl feugiat a. Sed massa metus, efficitur vel diam ut, auctor eleifend urna.
+      <p>
     </div>
   </div>
-
 </div>
