@@ -50,7 +50,7 @@ body {
 .trip-page {
   /* end timeline styles */ }
   .trip-page .edit-trip-btn {
-    margin: 20px 0 0 15px; }
+    margin: 20px 0 20px 15px; }
   .trip-page .vertical-timeline {
     font-size: 100%;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -68,6 +68,14 @@ body {
     .trip-page .vertical-timeline h1, .trip-page .vertical-timeline h2 {
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
       font-weight: bold; }
+
+.profile-page .form-horizontal label.control-label {
+  padding-top: 0; }
+
+.update-profile-page .about-me {
+  height: 200px; }
+.update-profile-page .save-button {
+  margin-bottom: 20px; }
 
 .cd-container {
   /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
