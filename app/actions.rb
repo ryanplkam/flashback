@@ -1,12 +1,15 @@
-# Homepage (Root path)
+require_relative './user_actions.rb'
+require_relative './trip_actions.rb'
+require_relative './activity_actions.rb'
+
 get '/' do
   erb :index
 end
 
-get '/user/:user_id/trips' do
-  erb :'users/user_id/trips/index'
+get '/search' do
+  erb :search
 end
 
-get '/user/:user_id/trips/:trip_id' do
-  erb :'users/user_id/trips/trip_id/index'
+get '/about' do
+  erb :about
 end
