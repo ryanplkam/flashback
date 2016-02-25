@@ -1,7 +1,5 @@
 $(document).ready(function() {
 
-  var viewportWidth = $(window).width();
-
   $(window).resize(function() {
     if ($(window).width() < 992) {
       $(".trips-page .col-md-4").removeClass("fixed-scroll");
