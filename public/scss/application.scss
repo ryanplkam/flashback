@@ -140,10 +140,28 @@ body {
     }
     color: $main-text;
     background-color: $background;
+    .new-activity-block {
+      overflow: hidden;
+      position: relative;
+      .cd-timeline-content {
+        left: 999px;
+      }
+      a {
+        color: black;
+      }
+      .new-activity {
+        background: #EDB623;
+      }
+      .glyphicon-plus{
+        margin: 18px 0 0 22px;
+        font-size: 1.5em;
+      }
+    }
     .glyphicon {
       margin: 18px 0 0 19px;
       font-size: 1.5em;
     }
+    
     a {
       color: $color-3;
       text-decoration: none;

@@ -1,67 +1,72 @@
 <div class='trip-page'>
-  <%= erb :'partials/_navbar' %>
-  <div class='container below-navbar'>
-    <div class='row'>
-
-      <div class='col-md-12'>
-
-        <div class='row'>
-
-          <div class='col-md-6'>
-            <h2>
-              Southeast Asia Backpacking
-              <br>
-              <small>
-                Korea, Vietnam, Laos, Indonesia, Thailand
-                <br>
-                <span class='label label-primary'>10 people like this</span>
-              </small>
-            </h2>
-            <h3></h3>
-          </div>
-          <div class='col-md-6'>
-            <a class='btn btn-danger edit-trip-btn pull-right' href="">
-              Delete
-            </a>
-            <a class='btn btn-primary edit-trip-btn pull-right' href="">
-              Edit
-            </a>
-          </div>
-
+<%= erb :'partials/_navbar' %>
+<div class='container below-navbar'>
+  <div class='row'>
+    <div class='col-md-12'>
+      <div class='row'>
+        <div class='col-md-6'>
+          <h2>
+            Southeast Asia Backpacking
+            <br>
+            <small>
+            Korea, Vietnam, Laos, Indonesia, Thailand
+            <br>
+            <span class='label label-primary'>10 people like this</span>
+            </small>
+          </h2>
+          <h3></h3>
+        </div>
+        <div class='col-md-6'>
+          <a class='btn btn-danger edit-trip-btn pull-right' href="">
+          Delete
+          </a>
+          <a class='btn btn-primary edit-trip-btn pull-right' href="">
+          Edit
+          </a>
         </div>
       </div>
-
-      <div class='col-md-6'>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel purus vel felis dapibus euismod. In quis tortor at lectus ultricies sodales in sed eros. Aenean congue enim sapien, vel mollis nisl feugiat a. Sed massa metus, efficitur vel diam ut, auctor eleifend urna.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel purus vel felis dapibus euismod. In quis tortor at lectus ultricies sodales in sed eros. Aenean congue enim sapien, vel mollis nisl feugiat a. Sed massa metus, efficitur vel diam ut, auctor eleifend urna.
-      </div>
-
-      <div class='col-md-6'>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel purus vel felis dapibus euismod. In quis tortor at lectus ultricies sodales in sed eros. Aenean congue enim sapien, vel mollis nisl feugiat a. Sed massa metus, efficitur vel diam ut, auctor eleifend urna.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel purus vel felis dapibus euismod. In quis tortor at lectus ultricies sodales in sed eros. Aenean congue enim sapien, vel mollis nisl feugiat a. Sed massa metus, efficitur vel diam ut, auctor eleifend urna.
-      </div>
-
-      <div class='col-md-12 vertical-timeline'>
-        <section id="cd-timeline" class="cd-container">
-          <% 5.times do %>
-          <div class="cd-timeline-block">
-            <div class="cd-timeline-img cd-picture">
-              <span class='glyphicon glyphicon-home'></span>
-            </div>
-            <!-- cd-timeline-img -->
-            <div class="cd-timeline-content">
-              <h2>Title of section 1</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
-              <a href="#0" class="cd-read-more">Read more</a>
-              <span class="cd-date">Jan 14</span>
-            </div>
-            <!-- cd-timeline-content -->
+    </div>
+    <div class='col-md-6'>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel purus vel felis dapibus euismod. In quis tortor at lectus ultricies sodales in sed eros. Aenean congue enim sapien, vel mollis nisl feugiat a. Sed massa metus, efficitur vel diam ut, auctor eleifend urna.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel purus vel felis dapibus euismod. In quis tortor at lectus ultricies sodales in sed eros. Aenean congue enim sapien, vel mollis nisl feugiat a. Sed massa metus, efficitur vel diam ut, auctor eleifend urna.
+    </div>
+    <div class='col-md-6'>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel purus vel felis dapibus euismod. In quis tortor at lectus ultricies sodales in sed eros. Aenean congue enim sapien, vel mollis nisl feugiat a. Sed massa metus, efficitur vel diam ut, auctor eleifend urna.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel purus vel felis dapibus euismod. In quis tortor at lectus ultricies sodales in sed eros. Aenean congue enim sapien, vel mollis nisl feugiat a. Sed massa metus, efficitur vel diam ut, auctor eleifend urna.
+    </div>
+    <div class='col-md-12 vertical-timeline'>
+      <section id="cd-timeline" class="cd-container">
+        <% 5.times do %>
+        <div class="cd-timeline-block">
+          <div class="cd-timeline-img cd-picture">
+            <span class='glyphicon glyphicon-home'></span>
           </div>
-          <!-- cd-timeline-block -->
-          <% end %>
-        </section>
-        <!-- cd-timeline -->
-      </div>
+          <!-- cd-timeline-img -->
+          <div class="cd-timeline-content">
+            <h2>Title of section 1</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
+            <a href="#0" class="cd-read-more">View</a>
+            <span class="cd-date">Jan 14</span>
+          </div>
+          <!-- cd-timeline-content -->
+        </div>
+        <!-- cd-timeline-block -->
+        <% end %>
 
+        <!-- New trip button -->
+        <div class="cd-timeline-block new-activity-block">
+          <a href="">
+            <div class="cd-timeline-img cd-picture new-activity">
+              <span class='glyphicon glyphicon-plus'></span>
+            </div>
+            <div class="cd-timeline-content">
+              <h2>New Activity</h2>
+            </div>
+          </a>
+        </div>
+
+      </section>
+      <!-- cd-timeline -->
     </div>
   </div>
+</div>
