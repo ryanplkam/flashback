@@ -41,15 +41,15 @@ body {
   
   #navbar {
     
-    button {
+    a {
       border: none;
     }
 
-    button[id="sign-in-facebook"] {
+    #sign-in-facebook {
       background-color: #3B5998;
     }
 
-    button[id="sign-in-google"] {
+    #sign-in-google {
       background-color: #DC4E41;
     }
 
@@ -151,6 +151,18 @@ body {
   .save-button {
     margin-bottom: 20px;
   }
+}
+
+.friends-page {
+
+  .below-navbar {
+    padding-top: 71px;
+  }
+
+  a.list-group-item::before {
+    content: "\e080";
+  }
+
 }
 
 .cd-container { /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */

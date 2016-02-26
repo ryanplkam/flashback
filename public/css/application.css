@@ -19,11 +19,11 @@ body {
 .fixed-scroll {
   position: fixed; }
 
-.root-page #navbar button {
+.root-page #navbar a {
   border: none; }
-.root-page #navbar button[id="sign-in-facebook"] {
+.root-page #navbar #sign-in-facebook {
   background-color: #3B5998; }
-.root-page #navbar button[id="sign-in-google"] {
+.root-page #navbar #sign-in-google {
   background-color: #DC4E41; }
 .root-page .blurb p {
   padding-top: 20px;
@@ -76,6 +76,11 @@ body {
   height: 200px; }
 .update-profile-page .save-button {
   margin-bottom: 20px; }
+
+.friends-page .below-navbar {
+  padding-top: 71px; }
+.friends-page a.list-group-item::before {
+  content: "\e080"; }
 
 .cd-container {
   /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
