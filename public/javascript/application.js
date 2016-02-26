@@ -31,14 +31,13 @@ $(document).ready(function() {
     }
   
 
-     // Responsive sidebar on activity page
+     // Responsive button margins on activity page
     if ($(window).width() < 992) {
-      $(".activity-details").removeClass("fixed-scroll").css('right', '0');
-      $('.activity-details .col-md-3').removeClass('pull-right').addClass('pull-left');
+      $(".activity-details .btn-primary").css("margin-top", '0').css('margin-bottom', '15px');
     } else {
-      $(".activity-details").addClass("fixed-scroll").css('right', '6%');
-       $('.activity-details .col-md-3').removeClass('pull-left').addClass('pull-right');
+      $(".activity-details .btn-primary").css("margin-top", '20px').css('margin-bottom', '0');
     }
+
 
   });  
 

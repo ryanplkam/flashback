@@ -130,13 +130,17 @@ body {
 .activity-page {
   
   .activity-photos {
+    
+    margin-top: 20px;
+
     img {
       width: 100%;
+
     }
   }
 
   .activity-details {
-    right: 6%;
+    // right: 6%;
     .btn-primary {
       margin-top: 20px;
     }
@@ -512,4 +516,3 @@ header {
     @include transform(translateX(0));
   }
 }
-

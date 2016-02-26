@@ -60,12 +60,12 @@ body {
 .friends-page a.list-group-item::before {
   content: "\e080"; }
 
-.activity-page .activity-photos img {
-  width: 100%; }
-.activity-page .activity-details {
-  right: 6%; }
-  .activity-page .activity-details .btn-primary {
-    margin-top: 20px; }
+.activity-page .activity-photos {
+  margin-top: 20px; }
+  .activity-page .activity-photos img {
+    width: 100%; }
+.activity-page .activity-details .btn-primary {
+  margin-top: 20px; }
 
 .trip-page {
   /* end timeline styles */ }
