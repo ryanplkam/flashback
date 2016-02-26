@@ -15,20 +15,19 @@
       </div>
       <div class='col-lg-7 col-lg-offset-5 bootcards-cards'>
         <% if user_login? %>
-          <a href="/users/<%=session[:user]%>/trips/new">
-            <div class="panel panel-default text-center new-trip-card">
-              <div class="list-group">
-                <div class="list-group-item">
-                  <h1 class="list-group-item-text">
-                    <span class='glyphicon glyphicon-plus'></span>
-                  </h1>
-                  <h4>New Trip</h4>
-                </div>
+        <a href="/users/<%=session[:user]%>/trips/new">
+          <div class="panel panel-default text-center new-trip-card">
+            <div class="list-group">
+              <div class="list-group-item">
+                <h1 class="list-group-item-text">
+                  <span class='glyphicon glyphicon-plus'></span>
+                </h1>
+                <h4>New Trip</h4>
               </div>
             </div>
-          </a>
+          </div>
+        </a>
         <% end %>  
-
         <% 4.times do %>
         <div class="panel panel-default">
           <div class="panel-heading clearfix">
@@ -49,10 +48,7 @@
               <p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mauris tellus, vehicula ut tellus id, suscipit dapibus tortor. Integer viverra turpis ac fringilla hendrerit. Sed faucibus posuere felis et pellentesque. Cras varius tortor vitae molestie tempor. Proin ut viverra elit, ac gravida tortor.</p>
             </div>
           </div>
-           <img src="http://i.imgur.com/rat4xOV.jpg" class="img-responsive"/>
-          <!-- <div class="panel-footer">
-            <small>Built with Bootcards - Base Card</small>
-            </div> -->
+          <img src="http://i.imgur.com/rat4xOV.jpg" class="img-responsive"/>
         </div>
         <% end %>
       </div>

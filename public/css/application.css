@@ -11,7 +11,8 @@ body {
   padding-top: 0px; }
 
 .navbar-brand {
-  font-size: 28px; }
+  font-size: 28px;
+  margin-left: -15px; }
 
 .below-navbar {
   padding-top: 51px; }
@@ -57,10 +58,8 @@ body {
 .update-profile-page .save-button {
   margin-bottom: 20px; }
 
-.friends-page .below-navbar {
-  padding-top: 71px; }
-.friends-page a.list-group-item::before {
-  content: "\e080"; }
+.friends-page .bootcards-list {
+  padding-top: 20px; }
 
 .activity-page .activity-photos {
   margin-top: 20px; }
@@ -91,12 +90,31 @@ body {
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
       font-weight: bold; }
 
+/* NEW TRIP PLACEHOLDER TEXT STYLES */
+.new-trip-page *::-webkit-input-placeholder {
+  color: #777; }
+.new-trip-page *:-moz-placeholder {
+  /* FF 4-18 */
+  color: #777; }
+.new-trip-page *::-moz-placeholder {
+  /* FF 19+ */
+  color: #777; }
+.new-trip-page *:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #777; }
+
+/* DATEPICKER STYLES */
+.form-control.datepicker {
+  padding-left: 12px; }
+
+/* LOGGED IN USER ICON STYLES */
 .dropdown-toggle.logged-in {
   padding: 9px 15px; }
   .dropdown-toggle.logged-in .user-icon {
     width: 31px;
     height: 31px; }
 
+/* SIGN IN STYLES */
 #sign-in-facebook {
   background-color: #3B5998;
   border: none; }
