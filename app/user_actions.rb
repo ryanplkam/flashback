@@ -11,10 +11,12 @@ get '/users/:user_id/friends' do
 end
 
 get '/users/:user_id/update' do
+  check_user_login
   erb :'users/update'
 end
 
 post '/users/:user_id' do
+  check_user_login
   "post"
 end
 
