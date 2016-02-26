@@ -74,11 +74,19 @@ body {
 .trips-page {
 
   .bootcards-cards {
-    margin-top: 20px; 
-  }
-
-  .new-trip-card h1 {
-    margin-bottom: 20px;
+    margin-top: 20px;
+    a:nth-child(1) {
+        color: #777;
+        .new-trip-card {
+          h1 {
+            margin-bottom: 20px;
+          }   
+        }
+        :hover {
+          color: #333
+        }
+      }
+    
   }
 
   .panel .btn {
@@ -176,7 +184,7 @@ body {
 
 }
 
-.logged-in {
+.dropdown-toggle.logged-in {
   padding: 9px 15px;
   .user-icon {
     width: 31px;
@@ -199,13 +207,15 @@ body {
 #sign-in-google {
   background-color: #DC4E41;
   border: none;
+  img {
+    -webkit-filter: invert(100%); filter: invert(100%);
+    height: 34px;
+    width: 34px;
+  }
 }
 
 #sign-in-google:hover {
   background-color: lighten(#DC4E41, 5%);
-  img {
-    -webkit-filter: brightness(102%);
-  }
 }
 
 .cd-container { /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
