@@ -1,72 +1,18 @@
 <div class='profile-page'>
   <%= erb :'partials/_navbar' %>
   <div class='container below-navbar'>
-
-      <div class="container" style="padding-top: 30px;">
-        <div class="row">
-          <!-- left column -->
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <div class="text-center">
-              <img src="http://lorempixel.com/200/200/people/9/" class="avatar img-circle img-thumbnail" alt="avatar">
-            </div>
-          </div>
-          <!-- edit form column -->
-          <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
-            <div class="alert alert-info alert-dismissable">
-              <a class="panel-close close" data-dismiss="alert">×</a>
-              <i class="fa fa-coffee"></i>
-              Click <strong>update</strong> to edit your <strong>About me</strong> info and <strong>Quirky fact!</strong>.
-            </div>
-             <a class='btn btn-primary edit-trip-btn pull-right' href="update">Update</a>
-            <h3>Personal info</h3>
-          </div>
-          <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
-            <form class="form-horizontal" role="form">
-              <div class="form-group">
-                <label class="col-lg-3 control-label">First name:</label>
-                <div class="col-lg-8">
-                  <p>Jane</p>
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="col-lg-3 control-label">Last name:</label>
-                <div class="col-lg-8">
-                  <p>Bishop</p>
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="col-lg-3 control-label">Date of birth:</label>
-                <div class="col-lg-8">
-                  <p>Oct 2, 1990</p>
-                </div>
-              </div>
-                 <div class="form-group">
-                <label class="col-lg-3 control-label">Location:</label>
-                <div class="col-lg-8">
-                  <p>Mobile, Alabama, US</p>
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="col-lg-3 control-label">Email:</label>
-                <div class="col-lg-8">
-                  <p>janesemail@gmail.com</p>
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="col-lg-3 control-label">About me:</label>
-                <div class="col-lg-8">
-                  <p>Meggings master cleanse ramps, craft beer bespoke viral chambray. Squid ethical vinyl paleo hammock. Shoreditch tote bag bushwick drinking vinegar. Banh mi scenester sriracha lomo photo booth pinterest. Cliche semiotics kickstarter ramps, raw denim cray man braid meh blue bottle. Pitchfork cronut kickstarter bicycle rights, kombucha bushwick waistcoat kinfolk biodiesel cold-pressed scenester direct trade chambray. Heirloom retro squid pork belly, affogato taxidermy iPhone portland ethical VHS blue bottle sriracha tilde chicharrones.</p>
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="col-lg-3 control-label">Quirky fact:</label>
-                <div class="col-lg-8">
-                  <p>I have 3 arms.</p>
-                </div>
-              </div>
-            </form>
-          </div>
-          </div>
+    <%= erb :'partials/_user_profile' %>
+    <div class="col-lg-8 col-lg-offset-4">
+      <form class="form-horizontal" role="form">
+        <div class="form-group">
+          <label class="control-label">About me:</label>
+          <p><%= @user.about_me %></p>
         </div>
-      </div>
+        <div class="form-group">
+          <label class="control-label">Quirky fact:</label>
+          <p><%= @user.quirky_fact %></p>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
