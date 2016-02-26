@@ -8,10 +8,10 @@ $(document).ready(function() {
   $(window).resize(function() {
     
     // Responsive sidebar on trips page
-    if ($(window).width() < 992) {
-      $(".trips-page .col-md-4").removeClass("fixed-scroll");
+    if ($(window).width() < 1170) {
+      $(".trips-page .col-lg-4").removeClass("fixed-scroll");
     } else {
-      $(".trips-page .col-md-4").addClass("fixed-scroll");
+      $(".trips-page .col-lg-4").addClass("fixed-scroll");
     }
 
     // Responsive icons on trip page

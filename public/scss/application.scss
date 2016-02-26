@@ -38,30 +38,20 @@ body {
 }
 
 .root-page {
-  
-  #navbar {
-    
+  .navbar-right {
+    .dropdown-toggle {
+      padding: 15px 15px;
+    }
     a {
       border: none;
     }
-
-    #sign-in-facebook {
-      background-color: #3B5998;
-    }
-
-    #sign-in-google {
-      background-color: #DC4E41;
-    }
-
   }
 
-  .blurb {
-    
+  .blurb { 
     p {
       padding-top: 20px;
       font-style: italic;
     }
-
     span {
       padding-top: 50px;
       font-size: 100px;
@@ -184,6 +174,38 @@ body {
 
   } /* end timeline styles */
 
+}
+
+.logged-in {
+  padding: 9px 15px;
+  .user-icon {
+    width: 31px;
+    height: 31px;
+  }
+}
+
+#sign-in-facebook {
+  background-color: #3B5998;
+  border: none;
+}
+
+#sign-in-facebook:hover {
+  background-color: lighten(#3B5998, 5%);
+  img {
+    -webkit-filter: brightness(111%);
+  }
+}
+
+#sign-in-google {
+  background-color: #DC4E41;
+  border: none;
+}
+
+#sign-in-google:hover {
+  background-color: lighten(#DC4E41, 5%);
+  img {
+    -webkit-filter: brightness(102%);
+  }
 }
 
 .cd-container { /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
