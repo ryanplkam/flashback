@@ -1,4 +1,4 @@
-<% @user = User.find(session[:user]) if user_login?%>
+<% @login_user = User.find(session[:user]) if user_login?%>
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
       <div class='row'>
@@ -11,7 +11,7 @@
               <span class="icon-bar"></span>
               </button>
               <% if user_login? %>
-                <a class="navbar-brand" href="/users/<%=@user.id%>/trips">Flashback</a>
+                <a class="navbar-brand" href="/users/<%=@login_user.id%>/trips">Flashback</a>
               <% else %>
                 <a class="navbar-brand" href="/">Flashback</a>
               <% end %>
@@ -34,12 +34,12 @@
               <% if user_login? %>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle logged-in" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                  <img class="user-icon" src="<%= @user.photo %>" alt="">
+                  <img class="user-icon" src="<%= @login_user.photo %>" alt="">
                   <span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                    <li><a href="/users/<%= @user.id %>/profile">Profile</a></li>
-                    <li><a href="/users/<%= @user.id %>/friends">Friends</a></li>
-                    <li><a href="/users/<%= @user.id %>/trips">Trips</a></li>
+                    <li><a href="/users/<%= @login_user.id %>/profile">Profile</a></li>
+                    <li><a href="/users/<%= @login_user.id %>/friends">Friends</a></li>
+                    <li><a href="/users/<%= @login_user.id %>/trips">Trips</a></li>
                     <li><a href="/logout">Logout</a></li>
                   </ul>
                 </li>
