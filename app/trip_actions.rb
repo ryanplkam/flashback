@@ -1,10 +1,10 @@
-get '/users/:user_id/trips/:trip_id' do
-  erb :'trips/index'
-end
-
-get '/users/:user_id/trips/:new' do
+get '/users/:user_id/trips/new' do
   check_user_login
   erb :'trips/new'
+end
+
+get '/users/:user_id/trips/:trip_id' do
+  erb :'trips/index'
 end
 
 post '/users/:user_id/trips' do

@@ -1,1 +1,14 @@
-update current trip
+<div class='update-trip-page'>
+  <%= erb :'partials/navbar' %>
+  <div class="below-navbar container">
+    <div class="row">
+      <div class="col-lg-6 col-lg-offset-3">
+        <h1>Create New Trip</h1>
+        <%= erb :'partials/_trip_form',
+          :local => {
+            :url => "/users/session[:user]/trips/params[:id]/update"
+            } %>
+      </div>
+    </div>
+  </div>
+</div>
