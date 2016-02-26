@@ -153,6 +153,18 @@ body {
   }
 }
 
+.friends-page {
+
+  .below-navbar {
+    padding-top: 71px;
+  }
+
+  a.list-group-item::before {
+    content: "\e080";
+  }
+
+}
+
 .cd-container { /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
   width: 90%;
   max-width: $L; // breakpoints inside partials > _layout.scss
