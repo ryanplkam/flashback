@@ -16,7 +16,7 @@ post '/users/:user_id/trips' do
   @trip.end_date = params[:end_date]
   @trip.location = params[:location]
   @trip.description = params[:description]
-  @trip.user = User.find_by(session[:user_id])
+  @trip.user = User.find_by(session[:user])
 
   if @trip.save
     redirect "/users/#{@trip.user_id}/trips"
