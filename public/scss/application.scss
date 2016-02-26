@@ -41,15 +41,15 @@ body {
   
   #navbar {
     
-    button {
+    a {
       border: none;
     }
 
-    button[id="sign-in-facebook"] {
+    #sign-in-facebook {
       background-color: #3B5998;
     }
 
-    button[id="sign-in-google"] {
+    #sign-in-google {
       background-color: #DC4E41;
     }
 
