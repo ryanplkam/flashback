@@ -8,7 +8,16 @@ helpers do
     redirect '/' unless user_login?
   end
 
+  def check_trip_existense(trip)
+    redirect '/' unless trip
+  end
+
+  def check_ownership(trip)
+    redirect '/' unless trip.user_id == session[:user]
+  end
+
   def generate_random_salut
     SALUTS.values[rand(SALUTS.length)]
   end
+
 end

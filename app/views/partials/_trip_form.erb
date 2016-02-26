@@ -1,4 +1,4 @@
-<form action="<%= url %>" method="post">
+<form action="<%= urls %>" method="post">
   <div class="form-group">
     <label for="title">Title </label>
     <input class="form-control" type="text" name="title" placeholder="make a title for your trip" value="<%= @trip.title if @trip %>">
@@ -6,22 +6,22 @@
 
   <div class="form-group">
     <label for="author">Start Date  </label>
-    <input class="form-control" type="text" name="author" placeholder="when did the trip start" value="<%= @trip.start_date if @trip %>">
+    <input class="form-control" type="text" name="start_date" placeholder="when did the trip start" value="<%= @trip.start_date if @trip %>">
   </div>
 
   <div class="form-group">
     <label for="url">End Date</label>
-    <input class="form-control" type="text" name="url" placeholder="when did the trip end" value="<%= @trip.end_date if @trip %>">
+    <input class="form-control" type="text" name="end_date" placeholder="when did the trip end" value="<%= @trip.end_date if @trip %>">
   </div>
 
   <div class="form-group">
     <label for="url">Location</label>
-    <input class="form-control" type="text" name="url" placeholder="where did you go" value="<%= @trip.location if @trip %>">
+    <input class="form-control" type="text" name="location" placeholder="where did you go" value="<%= @trip.location if @trip %>">
   </div>
 
   <div class="form-group">
     <label for="description">Trip description</label>
-    <textarea class="form-control" name="description"><% if @trip %>@trip.description<% else %>write something about your trip<% end %></textarea>
+    <textarea class="form-control" name="description"><% if @trip %><%=@trip.description%><% else %>write something about your trip<% end %></textarea>
   </div>
 
   <div class="form-group">
