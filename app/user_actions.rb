@@ -34,6 +34,24 @@ post '/users/:user_id' do
   redirect "/users/#{session[:user]}/profile"
 end
 
+# post '/users/:user_id/add' do
+#   check_user_login
+
+#   @friend = User.find_by(params[:id])
+#   @user = user.find_by(session[:user])
+
+#   check_profile_existence(@friend)
+#   check_profile_existence(@user)
+#   check_friendship(@user, @friend)
+
+#   @friendship = Friendship.new
+#   @friendship.user = @user
+#   @friendship.friend = @friend
+#   @friendship.save
+
+#   redirect '/'
+# end
+
 get '/auth/:provider/callback' do
 
   redirect '/' unless request.env['omniauth.auth']

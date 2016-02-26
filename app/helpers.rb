@@ -27,6 +27,15 @@ helpers do
   def check_activity_ownership(activity)
   end
 
+  # def check_friendship(user, friend)
+  #   redirect '/' if user.id = friend.id
+
+  #   friendships = Friendship.where(user: user)
+  #   friendships.each do |frienship|
+
+  #   redirect "/users/<%=session[:user]%>/friends"
+  # end
+
   def generate_random_salut
     SALUTS.values[rand(SALUTS.length)]
   end
