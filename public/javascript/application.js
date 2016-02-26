@@ -1,14 +1,18 @@
 $(document).ready(function() {
 
+  // // Set height of photos div on inidivual activity page
+  // var raw_height = $(window).height();
+  // var height = raw_height - 51;
+  // $('.activity-photos').height(height);
+
   $(window).resize(function() {
     
     // Responsive sidebar on trips page
-    if ($(window).width() < 992) {
-      $(".trips-page .col-md-4").removeClass("fixed-scroll");
+    if ($(window).width() < 1170) {
+      $(".trips-page .col-lg-4").removeClass("fixed-scroll");
     } else {
-      $(".trips-page .col-md-4").addClass("fixed-scroll");
+      $(".trips-page .col-lg-4").addClass("fixed-scroll");
     }
-
 
     // Responsive icons on trip page
     if ($(window).width() < 1200) {
@@ -25,6 +29,15 @@ $(document).ready(function() {
       $(".trip-page .edit-trip-btn").css("margin", "20px 15px 20px 0px");
       $(".trip-page .edit-trip-btn").addClass("pull-right").removeClass('pull-left');
     }
+  
+
+     // Responsive button margins on activity page
+    if ($(window).width() < 992) {
+      $(".activity-details .btn-primary").css("margin-top", '0').css('margin-bottom', '15px');
+    } else {
+      $(".activity-details .btn-primary").css("margin-top", '20px').css('margin-bottom', '0');
+    }
+
 
   });  
 

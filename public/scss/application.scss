@@ -38,30 +38,20 @@ body {
 }
 
 .root-page {
-  
-  #navbar {
-    
+  .navbar-right {
+    .dropdown-toggle {
+      padding: 15px 15px;
+    }
     a {
       border: none;
     }
-
-    #sign-in-facebook {
-      background-color: #3B5998;
-    }
-
-    #sign-in-google {
-      background-color: #DC4E41;
-    }
-
   }
 
-  .blurb {
-    
+  .blurb { 
     p {
       padding-top: 20px;
       font-style: italic;
     }
-
     span {
       padding-top: 50px;
       font-size: 100px;
@@ -84,15 +74,74 @@ body {
 .trips-page {
 
   .bootcards-cards {
-    margin-top: 20px; 
-  }
-
-  .new-trip-card h1 {
-    margin-bottom: 20px;
+    margin-top: 20px;
+    a:nth-child(1) {
+        color: #777;
+        .new-trip-card {
+          h1 {
+            margin-bottom: 20px;
+          }   
+        }
+        :hover {
+          color: #333
+        }
+      }
+    
   }
 
   .panel .btn {
     margin-left: 15px;
+  }
+
+}
+
+.profile-page {
+
+  .form-horizontal label.control-label {
+    padding-top: 0;
+  }  
+
+}
+
+.update-profile-page {
+  .about-me {
+    height: 200px;
+  }
+
+  .save-button {
+    margin-bottom: 20px;
+  }
+}
+
+.friends-page {
+
+  .below-navbar {
+    padding-top: 71px;
+  }
+
+  a.list-group-item::before {
+    content: "\e080";
+  }
+
+}
+
+.activity-page {
+  
+  .activity-photos {
+    
+    margin-top: 20px;
+
+    img {
+      width: 100%;
+
+    }
+  }
+
+  .activity-details {
+    // right: 6%;
+    .btn-primary {
+      margin-top: 20px;
+    }
   }
 
 }
@@ -135,34 +184,38 @@ body {
 
 }
 
-.profile-page {
-
-  .form-horizontal label.control-label {
-    padding-top: 0;
-  }  
-
-}
-
-.update-profile-page {
-  .about-me {
-    height: 200px;
-  }
-
-  .save-button {
-    margin-bottom: 20px;
+.dropdown-toggle.logged-in {
+  padding: 9px 15px;
+  .user-icon {
+    width: 31px;
+    height: 31px;
   }
 }
 
-.friends-page {
+#sign-in-facebook {
+  background-color: #3B5998;
+  border: none;
+}
 
-  .below-navbar {
-    padding-top: 71px;
+#sign-in-facebook:hover {
+  background-color: lighten(#3B5998, 5%);
+  img {
+    -webkit-filter: brightness(111%);
   }
+}
 
-  a.list-group-item::before {
-    content: "\e080";
+#sign-in-google {
+  background-color: #DC4E41;
+  border: none;
+  img {
+    -webkit-filter: invert(100%); filter: invert(100%);
+    height: 34px;
+    width: 34px;
   }
+}
 
+#sign-in-google:hover {
+  background-color: lighten(#DC4E41, 5%);
 }
 
 .cd-container { /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
@@ -495,4 +548,3 @@ header {
     @include transform(translateX(0));
   }
 }
-
