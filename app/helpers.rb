@@ -16,6 +16,17 @@ helpers do
     redirect '/' unless trip.user_id == session[:user]
   end
 
+  def check_profile_existence(profile)
+    redirect '/' unless profile.id == session[:user]
+  end
+
+  def check_profile_ownership(profile)
+    redirect '/' unless profile.id == session[:user]
+  end
+
+  def check_activity_ownership(activity)
+  end
+
   def generate_random_salut
     SALUTS.values[rand(SALUTS.length)]
   end
