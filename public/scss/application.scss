@@ -97,6 +97,53 @@ body {
 
 }
 
+.profile-page {
+
+  .form-horizontal label.control-label {
+    padding-top: 0;
+  }  
+
+}
+
+.update-profile-page {
+  .about-me {
+    height: 200px;
+  }
+
+  .save-button {
+    margin-bottom: 20px;
+  }
+}
+
+.friends-page {
+
+  .below-navbar {
+    padding-top: 71px;
+  }
+
+  a.list-group-item::before {
+    content: "\e080";
+  }
+
+}
+
+.activity-page {
+  
+  .activity-photos {
+    img {
+      width: 100%;
+    }
+  }
+
+  .activity-details {
+    right: 6%;
+    .btn-primary {
+      margin-top: 20px;
+    }
+  }
+
+}
+
 .trip-page {
   .edit-trip-btn {
     margin: 20px 0 20px 15px;
@@ -132,36 +179,6 @@ body {
     }
 
   } /* end timeline styles */
-
-}
-
-.profile-page {
-
-  .form-horizontal label.control-label {
-    padding-top: 0;
-  }  
-
-}
-
-.update-profile-page {
-  .about-me {
-    height: 200px;
-  }
-
-  .save-button {
-    margin-bottom: 20px;
-  }
-}
-
-.friends-page {
-
-  .below-navbar {
-    padding-top: 71px;
-  }
-
-  a.list-group-item::before {
-    content: "\e080";
-  }
 
 }
 
