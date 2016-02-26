@@ -34,23 +34,46 @@ post '/users/:user_id' do
   redirect "/users/#{session[:user]}/profile"
 end
 
-# post '/users/:user_id/add' do
-#   check_user_login
+post '/users/:user_id/add' do
+  check_user_login
 
-#   @friend = User.find_by(params[:id])
-#   @user = user.find_by(session[:user])
+  @user = User.find_by(id: session[:user])
+  @friend = User.find_by(id: params[:user_id])
 
-#   check_profile_existence(@friend)
-#   check_profile_existence(@user)
-#   check_friendship(@user, @friend)
+  check_friendship(@user, @friend)
+  redirect '/' if Friendship.find_by(user: @user, friend: @friend)
 
-#   @friendship = Friendship.new
-#   @friendship.user = @user
-#   @friendship.friend = @friend
-#   @friendship.save
+  @friendship = Friendship.new
+  @friendship.user = @user
+  @friendship.friend = @friend
+  @friendship.save
 
-#   redirect '/'
-# end
+  @reversed_friendship = Friendship.new
+  @reversed_friendship.user = @friend
+  @reversed_friendship.friend = @user
+  @reversed_friendship.save
+
+  redirect '/'
+end
+
+post '/users/:user_id/delete' do
+  check_user_login
+
+  @user = User.find_by(id: session[:user])
+  @friend = User.find_by(id: params[:user_id])
+
+  check_friendship(@user, @friend)
+
+  @friendship = Friendship.find_by(user: @user, friend: @friend)
+  @reversed_friendship = Friendship.find_by(user: @friend, friend: @user)
+
+  redirect '/' unless @friendship
+
+  @friendship.destroy
+  @reversed_friendship.destroy
+
+  redirect '/'
+end
 
 get '/auth/:provider/callback' do
 

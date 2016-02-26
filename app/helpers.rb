@@ -17,7 +17,7 @@ helpers do
   end
 
   def check_profile_existence(profile)
-    redirect '/' unless profile.id == session[:user]
+    redirect '/' unless profile
   end
 
   def check_profile_ownership(profile)
@@ -27,14 +27,11 @@ helpers do
   def check_activity_ownership(activity)
   end
 
-  # def check_friendship(user, friend)
-  #   redirect '/' if user.id = friend.id
-
-  #   friendships = Friendship.where(user: user)
-  #   friendships.each do |frienship|
-
-  #   redirect "/users/<%=session[:user]%>/friends"
-  # end
+  def check_friendship(user, friend)
+    check_profile_existence(user)
+    check_profile_existence(friend)
+    redirect '/' if user.id == friend.id
+  end
 
   def generate_random_salut
     SALUTS.values[rand(SALUTS.length)]
