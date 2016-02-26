@@ -14,8 +14,8 @@
         </div>
       </div>
       <div class='col-lg-7 col-lg-offset-5 bootcards-cards'>
-        
-          <a href="">
+        <% if user_login? %>
+          <a href="/users/<%=session[:user]%>/trips/new">
             <div class="panel panel-default text-center new-trip-card">
               <div class="list-group">
                 <div class="list-group-item">
@@ -27,7 +27,7 @@
               </div>
             </div>
           </a>
-        
+        <% end %>  
 
         <% 4.times do %>
         <div class="panel panel-default">
