@@ -34,7 +34,7 @@ $(document).ready(function() {
   $(window).resize(function() {
     
     // Responsive sidebar on trips page
-    if ($(window).width() < 1170) {
+    if ($(window).width() < 1200) {
       $(".trips-page .col-lg-4").removeClass("fixed-scroll");
     } else {
       $(".trips-page .col-lg-4").addClass("fixed-scroll");
