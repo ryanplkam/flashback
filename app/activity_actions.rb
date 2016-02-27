@@ -72,10 +72,25 @@ end
 
 get '/users/:user_id/trips/:trip_id/activities/:activity_id/delete' do
   check_user_login
+
+  @trip = Trip.find_by(id: params[:trip_id])
+  check_user_trip_relationship(@trip)
+
+  @activity = Activity.find_by(id: params[:activity_id])
+  check_trip_activity_relationship(@trip, @activity)
+
   erb :'activities/delete'
 end
 
 post '/users/:user_id/trips/:trip_id/activities/:activity_id/delete' do
   check_user_login
-  "delete trip posted"
+
+  @trip = Trip.find_by(id: params[:trip_id])
+  check_user_trip_relationship(@trip)
+
+  @activity = Activity.find_by(id: params[:activity_id])
+  check_trip_activity_relationship(@trip, @activity)
+
+  @activity.destroy
+  redirect "/users/#{params[:user_id]}/trips/#{params[:trip_id]}"
 end
