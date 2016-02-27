@@ -35,9 +35,9 @@
 
         <div class='col-lg-6 activity-photos'>
           <div id="slider">
-            <img src="/images/lake.jpg" alt="">
-            <img src="/images/aurora.jpg" alt="">
-            <img src="/images/ottawa.jpg" alt="">
+            <% @activity.photos.each do |photo| %>
+              <img src="<%=photo.safe_url%>" alt="">
+            <% end %>
           </div>
         </div>
 

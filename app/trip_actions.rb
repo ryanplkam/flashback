@@ -77,3 +77,9 @@ post '/users/:user_id/trips/:trip_id/delete' do
   @trip.destroy
   redirect "/users/#{@trip.user_id}/trips"
 end
+
+get '/users/:user_id/trips/:trip_id/photos' do
+  validate_url_relationship(params[:user_id], params[:trip_id])
+  @trip = Trip.find_by(id: params[:trip_id])
+  erb :'trips/album'
+end

@@ -1,7 +1,3 @@
-get '/users/:user_id/trips/:trip_id/photos' do
-  validate_url_relationship(params[:user_id], params[:trip_id])
-end
-
 get '/users/:user_id/trips/:trip_id/activities/:activity_id/photos/new' do
   validate_user_login
   validate_url_relationship(params[:user_id], params[:trip_id],params[:activity_id])
