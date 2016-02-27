@@ -10,3 +10,4 @@ public/.sass-cache/**
 .gitignore
 app/views/test.erb
 config/secret.rb
+app/views/add.erb
