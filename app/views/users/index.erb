@@ -5,11 +5,10 @@
       <div class='col-lg-4 fixed-scroll'>
         <div class='row'>
           <div class='col-lg-11'>
-            <h2>Ryan Kam<br>
-              <small>Toronto, Ontario</small>
+            <h2><%= @user.name %><br>
+              <small><%= @user.location %></small>
             </h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel purus vel felis dapibus euismod. In quis tortor at lectus ultricies sodales in sed eros. Aenean congue enim sapien, vel mollis nisl feugiat a. Sed massa metus, efficitur vel diam ut, auctor eleifend urna.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel purus vel felis dapibus euismod. In quis tortor at lectus ultricies sodales in sed eros. Aenean congue enim sapien, vel mollis nisl feugiat a. Sed massa metus, efficitur vel diam ut, auctor eleifend urna.</p>
+            <p><%= @user.about_me %></p>
           </div>
         </div>
       </div>
@@ -27,25 +26,38 @@
             </div>
           </div>
         </a>
-        <% end %>  
-        <% 4.times do %>
+        <% end %>
+        <% @user.trips.order(start_date: :desc).each do |trip| %>
         <div class="panel panel-default">
           <div class="panel-heading clearfix">
-            <h3 class="panel-title pull-left">Southeast Asia Backpacking</h3>
-            <a class="btn btn-primary pull-right" href="#">
+            <h3 class="panel-title pull-left"><%= trip.title %></h3>
+            <a class="btn btn-primary pull-right" href="./trips/<%= trip.id %>">
             View
             </a>
-            <a class="btn btn-primary pull-right" href="#">
+            <a class="btn btn-primary pull-right" href="./trips/<%= trip.id %>/update">
             Edit
             </a>
           </div>
           <div class="list-group">
             <div class="list-group-item">
-              <p class="list-group-item-text">Date</p>
-              <h4 class="list-group-item-heading">October 21, 2015 - November 15, 2015</h4>
+              <p class="list-group-item-text">Location</p>
+              <h4 class="list-group-item-heading">
+                <%= trip.location %>
+              </h4>
             </div>
             <div class="list-group-item">
-              <p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mauris tellus, vehicula ut tellus id, suscipit dapibus tortor. Integer viverra turpis ac fringilla hendrerit. Sed faucibus posuere felis et pellentesque. Cras varius tortor vitae molestie tempor. Proin ut viverra elit, ac gravida tortor.</p>
+              <p class="list-group-item-text">Date</p>
+              <h4 class="list-group-item-heading">
+                <%= Date::MONTHNAMES[trip.start_date.month] + " " + trip.start_date.day.to_s + ", " + trip.start_date.year.to_s %>
+                <% if trip.end_date %> -
+                  <%= Date::MONTHNAMES[trip.end_date.month] + " " + trip.end_date.day.to_s + ", " + trip.end_date.year.to_s %>
+                <% end %>
+              </h4>
+            </div>
+            <div class="list-group-item">
+              <p class="list-group-item-text">
+                <%= trip.description.split(/\s+/, 71)[0...70].join(' ') %><% if trip.description.split(/\s+/).length > 70 %>...<% end %>
+              </p>
             </div>
           </div>
           <img src="http://i.imgur.com/rat4xOV.jpg" class="img-responsive"/>

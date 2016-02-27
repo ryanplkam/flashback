@@ -5,6 +5,7 @@ end
 
 get '/users/:user_id/trips/:trip_id' do
   validate_url_relationship(params[:user_id], params[:trip_id])
+  @trip = Trip.find_by(id: params[:trip_id])
   erb :'trips/index'
 end
 

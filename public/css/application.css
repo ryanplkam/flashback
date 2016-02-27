@@ -62,16 +62,23 @@ body {
   padding-top: 20px; }
 
 .activity-page .activity-photos {
-  margin-top: 20px; }
-  .activity-page .activity-photos img {
-    width: 100%; }
-.activity-page .activity-details .btn-primary {
-  margin-top: 20px; }
+  margin-top: 20px;
+  margin-bottom: 20px; }
+.activity-page img {
+  width: 100%; }
+.activity-page .activity-details .btn {
+  margin: 20px 0 20px 15px; }
 
 .trip-page {
   /* end timeline styles */ }
   .trip-page .edit-trip-btn {
     margin: 20px 0 20px 15px; }
+  .trip-page .col-lg-12:nth-of-type(2) {
+    -webkit-column-count: 2;
+    /* Chrome, Safari, Opera */
+    -moz-column-count: 2;
+    /* Firefox */
+    column-count: 2; }
   .trip-page .vertical-timeline {
     font-size: 100%;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -81,7 +88,7 @@ body {
       overflow: hidden;
       position: relative; }
       .trip-page .vertical-timeline .new-activity-block .cd-timeline-content {
-        left: 999px; }
+        left: 9990px; }
       .trip-page .vertical-timeline .new-activity-block a {
         color: black; }
       .trip-page .vertical-timeline .new-activity-block .new-activity {

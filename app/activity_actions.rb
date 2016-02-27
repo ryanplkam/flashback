@@ -10,7 +10,7 @@ end
 
 get '/users/:user_id/trips/:trip_id/activities/:activity_id' do
   validate_url_relationship(params[:user_id], params[:trip_id], params[:activity_id])
-
+  @activity = Activity.find_by(id: params[:activity_id])
   erb :'activities/index'
 end
 

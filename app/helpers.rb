@@ -43,13 +43,13 @@ helpers do
     if activity_id
       activity = Activity.find_by(id: activity_id)
       validate_existence(activity)
-      redirect '/' unless acitivity.trip = trip
+      redirect '/' unless activity.trip == trip
     end
 
     if activity_id && photo_id
       photo = Photo.find_by(id: photo_id)
       validate_existence(photo)
-      redirect '/' unless photo.acitivity = acitivity
+      redirect '/' unless photo.activity == activity
     end
   end
 

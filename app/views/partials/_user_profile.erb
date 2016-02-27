@@ -8,11 +8,6 @@
     </div>
     <!-- edit form column -->
     <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
-      <div class="alert alert-info alert-dismissable">
-        <a class="panel-close close" data-dismiss="alert">×</a>
-        <i class="fa fa-coffee"></i>
-        Click <strong>update</strong> to edit your <strong>About me</strong> info and <strong>Quirky fact!</strong>.
-      </div>
       <% if user_login? %>
         <% if session[:user].to_s == params[:user_id] %>
           <a class='btn btn-primary edit-trip-btn pull-right' href="update">Update</a>

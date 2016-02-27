@@ -118,13 +118,14 @@ body {
 .activity-page {
   .activity-photos {
     margin-top: 20px;
+    margin-bottom: 20px;
+    }
     img {
       width: 100%;
     }
-  }
   .activity-details {
-    .btn-primary {
-      margin-top: 20px;
+    .btn {
+      margin: 20px 0 20px 15px;
     }
   }
 }
@@ -133,6 +134,11 @@ body {
   .edit-trip-btn {
     margin: 20px 0 20px 15px;
   } 
+  .col-lg-12:nth-of-type(2) {
+    -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+  }
   .vertical-timeline {        
     font: {
       size: 100%;
@@ -144,7 +150,7 @@ body {
       overflow: hidden;
       position: relative;
       .cd-timeline-content {
-        left: 999px;
+        left: 9990px;
       }
       a {
         color: black;

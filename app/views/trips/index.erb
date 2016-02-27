@@ -2,71 +2,72 @@
 <%= erb :'partials/_navbar' %>
 <div class='container below-navbar'>
   <div class='row'>
-    <div class='col-md-12'>
+    <div class='col-lg-12'>
       <div class='row'>
-        <div class='col-md-6'>
+        <div class='col-lg-6'>
           <h2>
-            Southeast Asia Backpacking
+            <%= @trip.title %>
             <br>
             <small>
-            Korea, Vietnam, Laos, Indonesia, Thailand
+            <%= @trip.location %>
+            <br>
+            <%= Date::MONTHNAMES[@trip.start_date.month] + " " + @trip.start_date.day.to_s + ", " + @trip.start_date.year.to_s %>
+            <% if @trip.end_date %> - 
+              <%= Date::MONTHNAMES[@trip.end_date.month] + " " + @trip.end_date.day.to_s + ", " + @trip.end_date.year.to_s %>
+            <% end %>
             <br>
             <span class='label label-primary'>10 people like this</span>
             </small>
           </h2>
-          <h3></h3>
         </div>
-        <div class='col-md-6'>
-          <a class='btn btn-danger edit-trip-btn pull-right' href="">
+        <div class='col-lg-6'>
+          <a class='btn btn-danger edit-trip-btn pull-right' href="./<%= @trip.id %>/delete">
           Delete
           </a>
-          <a class='btn btn-primary edit-trip-btn pull-right' href="">
+          <a class='btn btn-primary edit-trip-btn pull-right' href="./<%= @trip.id %>/update">
           Edit
           </a>
         </div>
       </div>
     </div>
-    <div class='col-md-6'>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel purus vel felis dapibus euismod. In quis tortor at lectus ultricies sodales in sed eros. Aenean congue enim sapien, vel mollis nisl feugiat a. Sed massa metus, efficitur vel diam ut, auctor eleifend urna.
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel purus vel felis dapibus euismod. In quis tortor at lectus ultricies sodales in sed eros. Aenean congue enim sapien, vel mollis nisl feugiat a. Sed massa metus, efficitur vel diam ut, auctor eleifend urna.
+    <div class='col-lg-12'>
+      <p>
+        <%= @trip.description %>
+      </p>
     </div>
-    <div class='col-md-6'>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel purus vel felis dapibus euismod. In quis tortor at lectus ultricies sodales in sed eros. Aenean congue enim sapien, vel mollis nisl feugiat a. Sed massa metus, efficitur vel diam ut, auctor eleifend urna.
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel purus vel felis dapibus euismod. In quis tortor at lectus ultricies sodales in sed eros. Aenean congue enim sapien, vel mollis nisl feugiat a. Sed massa metus, efficitur vel diam ut, auctor eleifend urna.
-    </div>
-    <div class='col-md-12 vertical-timeline'>
+    <div class='col-lg-12 vertical-timeline'>
       <section id="cd-timeline" class="cd-container">
-        <% 5.times do %>
+        <% @trip.activities.each do |activity| %>
         <div class="cd-timeline-block">
           <div class="cd-timeline-img cd-picture">
             <span class='glyphicon glyphicon-home'></span>
           </div>
           <!-- cd-timeline-img -->
           <div class="cd-timeline-content">
-            <h2>Title of section 1</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
-            <a href="#0" class="cd-read-more">View</a>
-            <span class="cd-date">Jan 14</span>
+            <h2><%= activity.title %></h2>
+            <p><%= activity.description %> </p>
+            <a href="./<%= @trip.id %>/activities/<%= activity.id %>" class="cd-read-more">View</a>
+            <span class="cd-date">
+            <%= Date::MONTHNAMES[activity.start_date.month] + " " + activity.start_date.day.to_s + ", " + activity.start_date.year.to_s %>
+            </span>
           </div>
           <!-- cd-timeline-content -->
         </div>
         <!-- cd-timeline-block -->
         <% end %>
-
         <!-- New trip button -->
         <div class="cd-timeline-block new-activity-block">
-          <a href="">
+          <a href="./<%= @trip.id %>/activities/new">
             <div class="cd-timeline-img cd-picture new-activity">
               <span class='glyphicon glyphicon-plus'>
-                <a href="/new"></a>
               </span>
             </div>
-            <div class="cd-timeline-content">
-              <h2>New Activity</h2>
-            </div>
           </a>
+          <div class="cd-timeline-content">
+            <h2>New Activity</h2>
+          </div>
+          <!-- </a> -->
         </div>
-
       </section>
       <!-- cd-timeline -->
     </div>
