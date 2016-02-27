@@ -12,8 +12,15 @@ helpers do
     redirect '/' unless trip
   end
 
-  def check_ownership(trip)
+  def check_user_trip_relationship(trip)
+    check_trip_existense(trip)
     redirect '/' unless trip.user_id == session[:user]
+  end
+
+  def check_activity_existence(activity)
+  end
+
+  def check_trip_activity_relationship(trip)
   end
 
   def check_profile_existence(profile)
@@ -22,9 +29,6 @@ helpers do
 
   def check_profile_ownership(profile)
     redirect '/' unless profile.id == session[:user]
-  end
-
-  def check_activity_ownership(activity)
   end
 
   def check_friendship(user, friend)
