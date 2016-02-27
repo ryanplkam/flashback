@@ -31,7 +31,7 @@ body {
   padding-top: 50px;
   font-size: 100px; }
 .root-page .jumbotron {
-  background-image: url("../images/ottawa.jpg");
+  background: url("../images/ottawa.jpg");
   background-size: 100% auto;
   background-position: 0 45%; }
   .root-page .jumbotron h1 {

@@ -2,7 +2,8 @@
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
     <div class='row'>
-      <div class='col-md-12'>
+
+      <div class='col-lg-12'>
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
           <span class="sr-only">Toggle navigation</span>
@@ -12,47 +13,46 @@
           </button>
           <a class="navbar-brand" href="/">Flashback</a>
         </div>
-
         <div id='navbar' class='navbar-collapse collapse'>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="/">About</a></li>
             <% if user_login? %>
-              <li class="dropdown">
-                  <a href="http://www.jquery2dotnet.com" class="dropdown-toggle" data-toggle="dropdown"> <%= generate_random_salut %>, <%= User.find(session[:user]).name %> <b class="caret"></b></a>
-                  <ul class="dropdown-menu" style="padding: 15px;min-width: 150px;">
-                    <li>
-                      <a href="/users/<%= User.find(session[:user]).id %>/profile">Profile</a>
-                      <a href="/users/<%= User.find(session[:user]).id %>/trips">Trips</a>
-                      <a href="/logout">Logout</a>
-                    </li>
-                  </ul>
+            <li class="dropdown">
+              <a href="http://www.jquery2dotnet.com" class="dropdown-toggle" data-toggle="dropdown"> <%= generate_random_salut %>, <%= User.find(session[:user]).name %> <b class="caret"></b></a>
+              <ul class="dropdown-menu" style="padding: 15px;min-width: 150px;">
+                <li>
+                  <a href="/users/<%= User.find(session[:user]).id %>/profile">Profile</a>
+                  <a href="/users/<%= User.find(session[:user]).id %>/trips">Trips</a>
+                  <a href="/logout">Logout</a>
                 </li>
+              </ul>
+            </li>
             <% else %>
-              <li class="dropdown">
-                <a href="http://www.jquery2dotnet.com" class="dropdown-toggle" data-toggle="dropdown">Sign in <b class="caret"></b></a>
-                <ul class="dropdown-menu" style="padding: 15px;min-width: 150px;">
-                  <li>
-                    <a class="btn btn-primary btn-block" type="button" id="sign-in-facebook" href="auth/facebook">
-                      <img src='/images/icon-facebook.svg'>
-                    </a><a class="btn btn-primary btn-block" type="button" id="sign-in-google" href="#">
-                      <img src='/images/google-plus-icon.png'>
-                    </a>
-                  </li>
-                </ul>
-              </li>
+            <li class="dropdown">
+              <a href="http://www.jquery2dotnet.com" class="dropdown-toggle" data-toggle="dropdown">Sign in <b class="caret"></b></a>
+              <ul class="dropdown-menu" style="padding: 15px;min-width: 150px;">
+                <li>
+                  <a class="btn btn-primary btn-block" type="button" id="sign-in-facebook" href="auth/facebook">
+                  <img src='/images/icon-facebook.svg'>
+                  </a><a class="btn btn-primary btn-block" type="button" id="sign-in-google" href="#">
+                  <img src='/images/google-plus-icon.png'>
+                  </a>
+                </li>
+              </ul>
+            </li>
             <% end %>
           </ul>
         </div>
-
         <!-- end nav collapse -->
       </div>
+
     </div>
   </div>
 </nav>
 <div class="jumbotron">
   <div class='container'>
     <div class='row'>
-      <div class='col-md-12'>
+      <div class='col-lg-12'>
         <h1>Relive your travels.</h1>
       </div>
     </div>
@@ -60,17 +60,17 @@
 </div>
 <div class='container text-center'>
   <div class='row'>
-    <div class='blurb col-md-4'>
+    <div class='blurb col-lg-4'>
       <span class='glyphicon glyphicon-globe'></span>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel purus vel felis dapibus euismod. In quis tortor at lectus ultricies sodales in sed eros. Aenean congue enim sapien, vel mollis nisl feugiat a. Sed massa metus, efficitur vel diam ut, auctor eleifend urna.
       <p>
     </div>
-    <div class='blurb col-md-4'>
+    <div class='blurb col-lg-4'>
       <span class='blurb glyphicon glyphicon-user'></span>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel purus vel felis dapibus euismod. In quis tortor at lectus ultricies sodales in sed eros. Aenean congue enim sapien, vel mollis nisl feugiat a. Sed massa metus, efficitur vel diam ut, auctor eleifend urna.
       <p>
     </div>
-    <div class='blurb col-md-4'>
+    <div class='blurb col-lg-4'>
       <span class='blurb glyphicon glyphicon-camera'></span>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel purus vel felis dapibus euismod. In quis tortor at lectus ultricies sodales in sed eros. Aenean congue enim sapien, vel mollis nisl feugiat a. Sed massa metus, efficitur vel diam ut, auctor eleifend urna.
       <p>
