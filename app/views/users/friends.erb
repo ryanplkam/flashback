@@ -7,17 +7,18 @@
         <div class="bootcards-list">
           <div class="panel panel-default">
             <div class="list-group">
-            <% 10.times do %>
-              <a class="list-group-item" href="#">
-                <img src="/images/Sofia Acey.jpg" class="img-rounded pull-left"/>
-                <h4 class="list-group-item-heading">Acey, Sofia</h4>
-                <p class="list-group-item-text">Masung Corp.</p>
-              </a>
-            <% end %>
+              <% @friends.each do |friend| %>
+                <a class="list-group-item" href="/users/<%=friend.id%>/profile">
+                  <img src="<%=friend.photo%>" class="img-rounded pull-left"/>
+                  <h4 class=""><%=friend.name%></h4>
+                  <p class="list-group-item-text"><%=friend.quirky_fact%></p>
+                </a>
+              <% end %>
             </div>
           </div>
         </div>
-      <div class='col-md-12'>
+      </div>
     </div>
   </div>
+</div>
 

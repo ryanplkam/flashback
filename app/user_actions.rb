@@ -8,6 +8,8 @@ get '/users/:user_id/trips' do
 end
 
 get '/users/:user_id/friends' do
+
+  @friends = Friendship.where(user_id: params[:user_id]).collect { |friendship| friendship.friend }
   erb :'users/friends'
 end
 
