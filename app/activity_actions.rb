@@ -1,5 +1,9 @@
 get '/users/:user_id/trips/:trip_id/activities/new' do
   check_user_login
+
+  @trip = Trip.find_by(id: params[:trip_id])
+  check_user_trip_relationship(@trip)
+
   erb :'activities/new'
 end
 
@@ -9,25 +13,84 @@ end
 
 post '/users/:user_id/trips/:trip_id/activities' do
   check_user_login
-  "save new activity"
+
+  @trip = Trip.find_by(id: params[:trip_id])
+  check_user_trip_relationship(@trip)
+
+  @activity = Activity.new
+  @activity.title = params[:title]
+  @activity.start_date = params[:start_date]
+  @activity.end_date = params[:end_date]
+  @activity.city = params[:city]
+  @activity.country = params[:country]
+  @activity.venue = params[:venue]
+  @activity.description = params[:description]
+  @activity.trip = @trip
+
+  if @activity.save
+    redirect "/users/#{@activity.trip.user_id}/trips/#{@activity.trip_id}"
+  else
+    erb :'activities/new'
+  end
 end
 
 get '/users/:user_id/trips/:trip_id/activities/:activity_id/update' do
   check_user_login
+
+  @trip = Trip.find_by(id: params[:trip_id])
+  check_user_trip_relationship(@trip)
+
+  @activity = Activity.find_by(id: params[:activity_id])
+  check_trip_activity_relationship(@trip, @activity)
+
   erb :'activities/update'
 end
 
 post '/users/:user_id/trips/:trip_id/activities/:activity_id' do
   check_user_login
-  "update trip posted"
+
+  @trip = Trip.find_by(id: params[:trip_id])
+  check_user_trip_relationship(@trip)
+
+  @activity = Activity.find_by(id: params[:activity_id])
+  check_trip_activity_relationship(@trip, @activity)
+
+  @activity.title = params[:title]
+  @activity.start_date = params[:start_date]
+  @activity.end_date = params[:end_date]
+  @activity.city = params[:city]
+  @activity.country = params[:country]
+  @activity.venue = params[:venue]
+  @activity.description = params[:description]
+
+  if @activity.save
+    redirect "/users/#{@activity.trip.user_id}/trips/#{@activity.trip_id}/activities/#{@activity.id}"
+  else
+    erb :'activities/update'
+  end
 end
 
 get '/users/:user_id/trips/:trip_id/activities/:activity_id/delete' do
   check_user_login
+
+  @trip = Trip.find_by(id: params[:trip_id])
+  check_user_trip_relationship(@trip)
+
+  @activity = Activity.find_by(id: params[:activity_id])
+  check_trip_activity_relationship(@trip, @activity)
+
   erb :'activities/delete'
 end
 
 post '/users/:user_id/trips/:trip_id/activities/:activity_id/delete' do
   check_user_login
-  "delete trip posted"
+
+  @trip = Trip.find_by(id: params[:trip_id])
+  check_user_trip_relationship(@trip)
+
+  @activity = Activity.find_by(id: params[:activity_id])
+  check_trip_activity_relationship(@trip, @activity)
+
+  @activity.destroy
+  redirect "/users/#{params[:user_id]}/trips/#{params[:trip_id]}"
 end
