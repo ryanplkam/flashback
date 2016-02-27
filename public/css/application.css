@@ -62,11 +62,12 @@ body {
   padding-top: 20px; }
 
 .activity-page .activity-photos {
-  margin-top: 20px; }
-  .activity-page .activity-photos img {
-    width: 100%; }
-.activity-page .activity-details .btn-primary {
-  margin-top: 20px; }
+  margin-top: 20px;
+  margin-bottom: 20px; }
+.activity-page img {
+  width: 100%; }
+.activity-page .activity-details .btn {
+  margin: 20px 0 20px 15px; }
 
 .trip-page {
   /* end timeline styles */ }

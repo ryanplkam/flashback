@@ -8,6 +8,8 @@ get '/users/:user_id/trips/:trip_id/activities/new' do
 end
 
 get '/users/:user_id/trips/:trip_id/activities/:activity_id' do
+  @trip = Trip.find_by(id: params[:trip_id])
+  @activity = Activity.find_by(id: params[:activity_id])
   erb :'activities/index'
 end
 
