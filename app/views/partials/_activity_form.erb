@@ -1,0 +1,79 @@
+<div class='row'>
+  <form action="<%= urls %>" method="post">
+    <div class='col-lg-12'>
+      <div class="form-group">
+        <label for="title">Trip Title </label>
+        <input class="form-control" type="text" name="title" placeholder="Name your activity!" value="<%= @activity.title if @activity %>">
+      </div>
+    </div>
+
+    <div class='col-lg-6'>
+      <div class="form-group">
+        <label for="start_date">Start Date  </label>
+        <input type="text" class="form-control datepicker" placeholder='When did it start?' name="start_date" value="<%= @activity.start_date if @activity %>">
+      </div>
+    </div>
+
+    <div class='col-lg-6'>
+      <div class="form-group">
+        <label for="end_date">End Date  </label>
+        <input type="text" class="form-control datepicker" placeholder="When did it finish?" name="end_date" value="<%= @activity.end_date if @activity %>">
+      </div>
+    </div>
+
+    <div class='col-lg-12'>
+      <div class="form-group">
+        <label for="city">City</label>
+        <input class="form-control" type="text" name="city" placeholder="Where'd you go?" value="<%= @activity.city if @activity %>">
+      </div>
+    </div>
+
+    <div class='col-lg-12'>
+      <div class="form-group">
+        <label for="country">Country</label>
+        <input class="form-control" type="text" name="country" placeholder="Where'd you go?" value="<%= @activity.country if @activity %>">
+      </div>
+    </div>
+
+    <div class='col-lg-12'>
+      <div class="form-group">
+        <label for="venue">Venue</label>
+        <input class="form-control" type="text" name="venue" placeholder="Where'd you go?" value="<%= @activity.venue if @activity %>">
+      </div>
+    </div>
+
+
+    <div class='col-lg-12'>
+      <div class="form-group">
+        <label for="description">Story</label>
+        <% if @activity %>
+        <textarea class="form-control" name="description"><%=@activity.description%></textarea>
+        <% else %>
+        <textarea class="form-control" name="description" placeholder="Write about what happened"></textarea>
+        <% end %>
+      </div>
+    </div>
+
+    <div class='col-lg-12'>
+      <div class="form-group">
+        <% if @activity %>
+          <% @activity.errors.full_messages.each do |message| %>
+            <%= message%> <br/>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class='col-lg-12'>
+      <div class="form-group">
+        <input class="btn btn-success" type="submit" value="Save">
+        <a class="btn btn-default" href="/users/<%=session[:user]%>/trips">Cancel</a>
+      </div>
+    </div>
+
+  </form>
+</div>
+
+<script>$('.datepicker').datepicker({
+  format: "yyyy-mm-dd"
+});</script>
