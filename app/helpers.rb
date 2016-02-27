@@ -8,32 +8,29 @@ helpers do
     redirect '/' unless user_login?
   end
 
-  def check_trip_existense(trip)
-    redirect '/' unless trip
+  def check_existence(thing)
+    redirect '/' unless thing
   end
 
   def check_user_trip_relationship(trip)
-    check_trip_existense(trip)
+    check_existence(trip)
     redirect '/' unless trip.user_id == session[:user]
   end
 
-  def check_activity_existence(activity)
-  end
-
-  def check_trip_activity_relationship(trip)
-  end
-
-  def check_profile_existence(profile)
-    redirect '/' unless profile
+  def check_trip_activity_relationship(trip, activity)
+    check_existence(trip)
+    check_existence(activity)
+    redirect '/' unless activity.trip == trip
   end
 
   def check_profile_ownership(profile)
+    check_existence(profile)
     redirect '/' unless profile.id == session[:user]
   end
 
   def check_friendship(user, friend)
-    check_profile_existence(user)
-    check_profile_existence(friend)
+    check_existence(user)
+    check_existence(friend)
     redirect '/' if user.id == friend.id
   end
 

@@ -1,1 +1,14 @@
-Update a new activities
+<div class='new-trip-page'>
+  <%= erb :'partials/_navbar' %>
+  <div class="below-navbar container">
+    <div class="row">
+      <div class="col-lg-6 col-lg-offset-3">
+        <h1>Update Activity</h1>
+        <%= erb :'partials/_activity_form',
+          locals: {
+            urls: "/users/#{params[:user_id]}/trips/#{params[:trip_id]}/activities/#{params[:activity_id]}"
+            } %>
+      </div>
+    </div>
+  </div>
+</div>
