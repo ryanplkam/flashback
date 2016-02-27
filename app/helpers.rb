@@ -4,34 +4,53 @@ helpers do
     session.has_key?("user")
   end
 
-  def check_user_login
+  def validate_user_login
     redirect '/' unless user_login?
   end
 
-  def check_existence(thing)
+  def validate_existence(thing)
     redirect '/' unless thing
   end
 
-  def check_user_trip_relationship(trip)
-    check_existence(trip)
+  def validate_trip_ownership(trip_id)
+    trip = Trip.find_by(id: trip_id)
+    validate_existence(trip)
     redirect '/' unless trip.user_id == session[:user]
   end
 
-  def check_trip_activity_relationship(trip, activity)
-    check_existence(trip)
-    check_existence(activity)
-    redirect '/' unless activity.trip == trip
-  end
-
-  def check_profile_ownership(profile)
-    check_existence(profile)
+  def validate_profile_ownership(profile_id)
+    profile = User.find_by(id: profile_id)
     redirect '/' unless profile.id == session[:user]
   end
 
-  def check_friendship(user, friend)
-    check_existence(user)
-    check_existence(friend)
+  def validate_friendship(user, friend)
+    validate_existence(user)
+    validate_existence(friend)
     redirect '/' if user.id == friend.id
+  end
+
+  def validate_url_relationship(user_id, trip_id=nil, activity_id=nil, photo_id=nil)
+
+    user = User.find_by(id: user_id)
+    validate_existence(user)
+
+    if trip_id
+      trip = Trip.find_by(id: trip_id)
+      validate_existence(trip)
+      redirect '/' unless trip.user == user
+    end
+
+    if activity_id
+      activity = Activity.find_by(id: activity_id)
+      validate_existence(activity)
+      redirect '/' unless acitivity.trip = trip
+    end
+
+    if activity_id && photo_id
+      photo = Photo.find_by(id: photo_id)
+      validate_existence(photo)
+      redirect '/' unless photo.acitivity = acitivity
+    end
   end
 
   def generate_random_salut
