@@ -11,7 +11,10 @@
             <small>
             <%= @trip.location %>
             <br>
-            <%= Date::MONTHNAMES[@trip.start_date.month] + " " + @trip.start_date.day.to_s + ", " + @trip.start_date.year.to_s %> - <%= Date::MONTHNAMES[@trip.end_date.month] + " " + @trip.end_date.day.to_s + ", " + @trip.end_date.year.to_s %>
+            <%= Date::MONTHNAMES[@trip.start_date.month] + " " + @trip.start_date.day.to_s + ", " + @trip.start_date.year.to_s %>
+            <% if @trip.end_date %> - 
+              <%= Date::MONTHNAMES[@trip.end_date.month] + " " + @trip.end_date.day.to_s + ", " + @trip.end_date.year.to_s %>
+            <% end %>
             <br>
             <span class='label label-primary'>10 people like this</span>
             </small>
@@ -43,7 +46,7 @@
           <div class="cd-timeline-content">
             <h2><%= activity.title %></h2>
             <p><%= activity.description %> </p>
-            <a href="#0" class="cd-read-more">View</a>
+            <a href="./<%= @trip.id %>/activities/<%= activity.id %>" class="cd-read-more">View</a>
             <span class="cd-date">
             <%= Date::MONTHNAMES[activity.start_date.month] + " " + activity.start_date.day.to_s + ", " + activity.start_date.year.to_s %>
             </span>

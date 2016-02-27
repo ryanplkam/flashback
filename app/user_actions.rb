@@ -4,6 +4,7 @@ get '/users/:user_id/profile' do
 end
 
 get '/users/:user_id/trips' do
+  @user = User.find_by(id: params[:user_id])
   erb :'users/index'
 end
 
