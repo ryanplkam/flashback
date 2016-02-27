@@ -12,6 +12,8 @@ require 'pg'
 
 require 'omniauth-facebook'
 
+require 'cloudinary'
+
 require 'pry'
 
 require_relative './secret'
@@ -32,13 +34,21 @@ end
 
 # Facebook login configuration
 use OmniAuth::Builder do
-  provider :facebook, CLIENT_ID, CLIENT_SECRET,
+  provider :facebook, FB_CLIENT_ID, FB_CLIENT_SECRET,
     :client_options => {
       :site => 'https://graph.facebook.com/v2.2',
       :authorize_url => "https://www.facebook.com/v2.2/dialog/oauth"
       },
     :scope => 'public_profile,email,user_birthday,user_location',
     :image_size => 'large'
+end
+
+# Cloudinary API configuration
+Cloudinary.config do |config|
+  config.cloud_name = 'cuongtn'
+  config.api_key = CLOUD_API_KEY
+  config.api_secret = CLOUD_API_SECRET
+  config.cdn_subdomain = true
 end
 
 # Set up the database and models
