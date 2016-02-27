@@ -4,6 +4,7 @@ get '/users/:user_id/trips/new' do
 end
 
 get '/users/:user_id/trips/:trip_id' do
+  @trip = Trip.find_by(id: params[:trip_id])
   erb :'trips/index'
 end
 

@@ -72,6 +72,12 @@ body {
   /* end timeline styles */ }
   .trip-page .edit-trip-btn {
     margin: 20px 0 20px 15px; }
+  .trip-page .col-lg-12:nth-of-type(2) {
+    -webkit-column-count: 2;
+    /* Chrome, Safari, Opera */
+    -moz-column-count: 2;
+    /* Firefox */
+    column-count: 2; }
   .trip-page .vertical-timeline {
     font-size: 100%;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
