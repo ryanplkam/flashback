@@ -2,17 +2,23 @@
   <%= erb :'partials/_navbar' %>
   <div class='container below-navbar'>
     <%= erb :'partials/_user_profile' %>
-    <div class="col-lg-8 col-lg-offset-4">
-      <form class="form-horizontal" role="form">
-        <div class="form-group">
-          <label class="control-label">About me:</label>
-          <p><%= @user.about_me %></p>
-        </div>
-        <div class="form-group">
-          <label class="control-label">Quirky fact:</label>
-          <p><%= @user.quirky_fact %></p>
-        </div>
-      </form>
+    
+    <div class='row'>
+      <div class="col-lg-8 col-lg-offset-4">
+        <form class="form-horizontal" role="form">
+          <div class="form-group">
+            <label class="control-label">About me:</label>
+            <p><%= @user.about_me %></p>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Quirky fact:</label>
+            <p><%= @user.quirky_fact %></p>
+          </div>
+        </form>
+      </div>
     </div>
+
+
   </div>
+
 </div>

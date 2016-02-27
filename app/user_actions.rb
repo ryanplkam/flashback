@@ -53,7 +53,7 @@ post '/users/:user_id/add' do
   @reversed_friendship.friend = @user
   @reversed_friendship.save
 
-  redirect '/'
+  redirect "/users/#{params[:user_id]}/profile"
 end
 
 post '/users/:user_id/delete' do
@@ -72,7 +72,7 @@ post '/users/:user_id/delete' do
   @friendship.destroy
   @reversed_friendship.destroy
 
-  redirect '/'
+  redirect "/users/#{params[:user_id]}/profile"
 end
 
 get '/auth/:provider/callback' do
