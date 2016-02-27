@@ -16,6 +16,7 @@ gem 'puma'
 gem 'tux'
 
 gem 'omniauth-facebook'
+gem 'cloudinary'
 
 group :development, :test do
   gem 'pry'

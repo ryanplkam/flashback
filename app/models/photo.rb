@@ -1,6 +1,6 @@
 class Photo < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :activity
 
-  validates :photo, presence: true
+  validates :safe_url, presence: true
   validates :activity, presence: true
 end

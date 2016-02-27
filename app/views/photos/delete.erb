@@ -1,0 +1,18 @@
+<div class='new-trip-page'>
+  <%= erb :'partials/_navbar' %>
+  <div class="below-navbar container">
+    <div class="row">
+      <div class="col-lg-6 col-lg-offset-3">
+          <form class="form-horizontal" action="/users/<%=params[:user_id]%>/trips/<%=params[:trip_id]%>/activities/<%=params[:activity_id]%>/photos/<%=params[:photo_id]%>/delete" method="post">
+            <div class="form-group">
+              <label>Do you want to delete the photo</label>
+            </div>
+            <div class="form-group">
+              <input class="btn btn-danger" type="submit" value="DELETE">
+            </div>
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
+

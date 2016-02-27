@@ -26,8 +26,8 @@
             </div>
           </div>
         </a>
-        <% end %>  
-        <% @user.trips.each do |trip| %>
+        <% end %>
+        <% @user.trips.order(start_date: :desc).each do |trip| %>
         <div class="panel panel-default">
           <div class="panel-heading clearfix">
             <h3 class="panel-title pull-left"><%= trip.title %></h3>
@@ -49,7 +49,7 @@
               <p class="list-group-item-text">Date</p>
               <h4 class="list-group-item-heading">
                 <%= Date::MONTHNAMES[trip.start_date.month] + " " + trip.start_date.day.to_s + ", " + trip.start_date.year.to_s %>
-                <% if trip.end_date %> - 
+                <% if trip.end_date %> -
                   <%= Date::MONTHNAMES[trip.end_date.month] + " " + trip.end_date.day.to_s + ", " + trip.end_date.year.to_s %>
                 <% end %>
               </h4>

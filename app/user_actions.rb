@@ -1,32 +1,37 @@
 get '/users/:user_id/profile' do
+  validate_url_relationship(params[:user_id])
   @user = User.find_by(id: params[:user_id])
   erb :'users/profile'
 end
 
 get '/users/:user_id/trips' do
+  validate_url_relationship(params[:user_id])
   @user = User.find_by(id: params[:user_id])
   erb :'users/index'
 end
 
 get '/users/:user_id/friends' do
-
+  validate_url_relationship(params[:user_id])
   @friends = Friendship.where(user_id: params[:user_id]).collect { |friendship| friendship.friend }
   erb :'users/friends'
 end
 
 get '/users/:user_id/update' do
-  check_user_login
-  @profile = User.find_by(params[:id])
-  check_profile_ownership(@profile)
+  validate_user_login
+  validate_url_relationship(params[:user_id])
+  validate_profile_ownership(params[:user_id])
+
+  @user = User.find_by(id: params[:user_id])
 
   erb :'users/update'
 end
 
 post '/users/:user_id' do
-  check_user_login
-  @profile = User.find_by(params[:id])
-  check_profile_ownership(@profile)
+  validate_user_login
+  validate_url_relationship(params[:user_id])
+  validate_profile_ownership(params[:user_id])
 
+  @profile = User.find_by(params[:id])
   @profile.about_me = params[:about_me]
   @profile.quirky_fact = params[:quirky_fact]
 
@@ -36,12 +41,13 @@ post '/users/:user_id' do
 end
 
 post '/users/:user_id/add' do
-  check_user_login
+  validate_user_login
+  validate_url_relationship(params[:user_id])
 
   @user = User.find_by(id: session[:user])
   @friend = User.find_by(id: params[:user_id])
 
-  check_friendship(@user, @friend)
+  validate_friendship(@user, @friend)
   redirect '/' if Friendship.find_by(user: @user, friend: @friend)
 
   @friendship = Friendship.new
@@ -58,12 +64,13 @@ post '/users/:user_id/add' do
 end
 
 post '/users/:user_id/delete' do
-  check_user_login
+  validate_user_login
+  validate_url_relationship(params[:user_id])
 
   @user = User.find_by(id: session[:user])
   @friend = User.find_by(id: params[:user_id])
 
-  check_friendship(@user, @friend)
+  validate_friendship(@user, @friend)
 
   @friendship = Friendship.find_by(user: @user, friend: @friend)
   @reversed_friendship = Friendship.find_by(user: @friend, friend: @user)
@@ -77,7 +84,7 @@ post '/users/:user_id/delete' do
 end
 
 get '/auth/:provider/callback' do
-
+  redirect '/' if user_login?
   redirect '/' unless request.env['omniauth.auth']
 
   auth = request.env['omniauth.auth']
@@ -97,7 +104,7 @@ get '/auth/:provider/callback' do
 end
 
 get '/logout' do
-  check_user_login
+  validate_user_login
 
   session.delete(:user)
   redirect '/'

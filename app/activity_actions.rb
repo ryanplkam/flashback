@@ -1,23 +1,25 @@
 get '/users/:user_id/trips/:trip_id/activities/new' do
-  check_user_login
+  validate_user_login
+  validate_url_relationship(params[:user_id], params[:trip_id])
+  validate_trip_ownership(params[:trip_id])
 
   @trip = Trip.find_by(id: params[:trip_id])
-  check_user_trip_relationship(@trip)
 
   erb :'activities/new'
 end
 
 get '/users/:user_id/trips/:trip_id/activities/:activity_id' do
-  @trip = Trip.find_by(id: params[:trip_id])
+  validate_url_relationship(params[:user_id], params[:trip_id], params[:activity_id])
   @activity = Activity.find_by(id: params[:activity_id])
   erb :'activities/index'
 end
 
 post '/users/:user_id/trips/:trip_id/activities' do
-  check_user_login
+  validate_user_login
+  validate_url_relationship(params[:user_id], params[:trip_id])
+  validate_trip_ownership(params[:trip_id])
 
   @trip = Trip.find_by(id: params[:trip_id])
-  check_user_trip_relationship(@trip)
 
   @activity = Activity.new
   @activity.title = params[:title]
@@ -37,26 +39,22 @@ post '/users/:user_id/trips/:trip_id/activities' do
 end
 
 get '/users/:user_id/trips/:trip_id/activities/:activity_id/update' do
-  check_user_login
+  validate_user_login
+  validate_url_relationship(params[:user_id], params[:trip_id],params[:activity_id])
+  validate_trip_ownership(params[:trip_id])
 
   @trip = Trip.find_by(id: params[:trip_id])
-  check_user_trip_relationship(@trip)
-
   @activity = Activity.find_by(id: params[:activity_id])
-  check_trip_activity_relationship(@trip, @activity)
 
   erb :'activities/update'
 end
 
 post '/users/:user_id/trips/:trip_id/activities/:activity_id' do
-  check_user_login
-
-  @trip = Trip.find_by(id: params[:trip_id])
-  check_user_trip_relationship(@trip)
+  validate_user_login
+  validate_url_relationship(params[:user_id], params[:trip_id],params[:activity_id])
+  validate_trip_ownership(params[:trip_id])
 
   @activity = Activity.find_by(id: params[:activity_id])
-  check_trip_activity_relationship(@trip, @activity)
-
   @activity.title = params[:title]
   @activity.start_date = params[:start_date]
   @activity.end_date = params[:end_date]
@@ -73,25 +71,21 @@ post '/users/:user_id/trips/:trip_id/activities/:activity_id' do
 end
 
 get '/users/:user_id/trips/:trip_id/activities/:activity_id/delete' do
-  check_user_login
-
-  @trip = Trip.find_by(id: params[:trip_id])
-  check_user_trip_relationship(@trip)
+  validate_user_login
+  validate_url_relationship(params[:user_id], params[:trip_id],params[:activity_id])
+  validate_trip_ownership(params[:trip_id])
 
   @activity = Activity.find_by(id: params[:activity_id])
-  check_trip_activity_relationship(@trip, @activity)
 
   erb :'activities/delete'
 end
 
 post '/users/:user_id/trips/:trip_id/activities/:activity_id/delete' do
-  check_user_login
-
-  @trip = Trip.find_by(id: params[:trip_id])
-  check_user_trip_relationship(@trip)
+  validate_user_login
+  validate_url_relationship(params[:user_id], params[:trip_id],params[:activity_id])
+  validate_trip_ownership(params[:trip_id])
 
   @activity = Activity.find_by(id: params[:activity_id])
-  check_trip_activity_relationship(@trip, @activity)
 
   @activity.destroy
   redirect "/users/#{params[:user_id]}/trips/#{params[:trip_id]}"
