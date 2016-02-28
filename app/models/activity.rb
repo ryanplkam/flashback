@@ -1,5 +1,5 @@
 class Activity < ActiveRecord::Base
-  has_many :photos
+  has_many :photos, dependent: :destroy
   belongs_to :trip
 
   validates :title, presence: true

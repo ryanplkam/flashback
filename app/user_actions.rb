@@ -100,7 +100,7 @@ get '/auth/:provider/callback' do
 
   session[:user] = fbuser.id
 
-  redirect '/'
+  redirect "/users/#{session[:user]}/trips"
 end
 
 get '/logout' do

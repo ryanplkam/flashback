@@ -1,5 +1,5 @@
 class Trip < ActiveRecord::Base
-  has_many :activities
+  has_many :activities, dependent: :destroy
   belongs_to :user
 
   validates :title, presence: true

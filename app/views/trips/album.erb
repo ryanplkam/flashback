@@ -1,0 +1,14 @@
+<div class='trip-page'>
+  <%= erb :'partials/_navbar' %>
+  <div class='container below-navbar'>
+    <% @trip.activities.each do |activity| %>
+      <div class="row">
+        <% activity.photos.each do |photo| %>
+          <div class="col-lg-3">
+            <img src="<%=photo.safe_url%>" alt="">
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

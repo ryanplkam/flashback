@@ -1,1 +1,16 @@
-Delete a trip
+<div class='new-trip-page'>
+  <%= erb :'partials/_navbar' %>
+  <div class="below-navbar container">
+    <div class="row">
+      <div class="col-lg-6 col-lg-offset-3">
+      <form action="/users/<%=params[:user_id]%>/trips/<%=params[:trip_id]%>/delete" method="post" class="form-horizontal">
+      <div class="form-group">
+        <label for="delete">Are you sure about deleting this trip?</label>
+        <input type="submit" class="btn btn-danger" value="DELETE">
+        <a class="btn btn-default" href="/users/<%=params[:user_id]%>/trips/<%=params[:trip_id]%>">CANCEL</a>
+      </div>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -32,7 +32,7 @@ post '/users/:user_id/trips/:trip_id/activities' do
   @activity.trip = @trip
 
   if @activity.save
-    redirect "/users/#{@activity.trip.user_id}/trips/#{@activity.trip_id}"
+    redirect "/users/#{@activity.trip.user_id}/trips/#{@activity.trip_id}/activities/#{@activity.id}/photos/new"
   else
     erb :'activities/new'
   end
