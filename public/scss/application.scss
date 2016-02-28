@@ -60,9 +60,11 @@ body {
   }
 
   .jumbotron {
-    background: url('../images/ottawa.jpg');
-    background-size: 100% auto;
-    background-position: 0 45%;
+    background: url('../images/ottawa.jpg') center center;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    overflow: hidden;
     
     h1 {
       font-family: 'Roboto Condensed', sans-serif;
@@ -95,9 +97,24 @@ body {
 }
 
 .profile-page {
-  .form-horizontal label.control-label {
-    padding-top: 0;
-  }  
+  .below-navbar {
+    margin-top: 30px;
+  }
+  .avatar{
+    margin-bottom: 20px;
+  }
+  h3 {
+    margin-top: 0;
+  }
+  .form-horizontal {
+    .form-group {     
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+    label.control-label {
+      padding-top: 0;
+    }
+  }
 }
 
 .update-profile-page {
@@ -105,7 +122,7 @@ body {
     height: 200px;
   }
   .save-button {
-    margin-bottom: 20px;
+    margin-right: 15px;
   }
 }
 
@@ -116,18 +133,24 @@ body {
 }
 
 .activity-page {
+
   .activity-photos {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 20px 0 20px;
     }
     img {
       width: 100%;
     }
-  .activity-details {
-    .btn {
-      margin: 20px 0 20px 15px;
+
+    .btn-group {
+      .btn {
+        margin: 20px 0 0 15px;
+      }
     }
-  }
+
+    .back-button {
+      margin: 20px 0 0 15px;
+    }
+  
 }
 
 .trip-page {

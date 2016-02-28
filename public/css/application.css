@@ -31,9 +31,11 @@ body {
   padding-top: 50px;
   font-size: 100px; }
 .root-page .jumbotron {
-  background: url("../images/ottawa.jpg");
-  background-size: 100% auto;
-  background-position: 0 45%; }
+  background: url("../images/ottawa.jpg") center center;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  overflow: hidden; }
   .root-page .jumbotron h1 {
     font-family: 'Roboto Condensed', sans-serif;
     color: black;
@@ -50,24 +52,34 @@ body {
 .trips-page .panel .btn {
   margin-left: 15px; }
 
+.profile-page .below-navbar {
+  margin-top: 30px; }
+.profile-page .avatar {
+  margin-bottom: 20px; }
+.profile-page h3 {
+  margin-top: 0; }
+.profile-page .form-horizontal .form-group {
+  margin-left: 0px;
+  margin-right: 0px; }
 .profile-page .form-horizontal label.control-label {
   padding-top: 0; }
 
 .update-profile-page .about-me {
   height: 200px; }
 .update-profile-page .save-button {
-  margin-bottom: 20px; }
+  margin-right: 15px; }
 
 .friends-page .bootcards-list {
   padding-top: 20px; }
 
 .activity-page .activity-photos {
-  margin-top: 20px;
-  margin-bottom: 20px; }
+  margin: 20px 0 20px; }
 .activity-page img {
   width: 100%; }
-.activity-page .activity-details .btn {
-  margin: 20px 0 20px 15px; }
+.activity-page .btn-group .btn {
+  margin: 20px 0 0 15px; }
+.activity-page .back-button {
+  margin: 20px 0 0 15px; }
 
 .trip-page {
   /* end timeline styles */ }

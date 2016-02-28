@@ -17,19 +17,20 @@ $(document).ready(function() {
 
   // Move buttons on trip page
   if ($(window).width() < 992) {
-    $(".trip-page .edit-trip-btn").css("margin", "0px 15px 20px 0px");
+    $(".trip-page .edit-trip-btn").css("margin", "5px 15px 15px 0px");
     $(".trip-page .edit-trip-btn").removeClass("pull-right").addClass('pull-left');
   } else {
     $(".trip-page .edit-trip-btn").css("margin", "20px 0px 20px 15px");
     $(".trip-page .edit-trip-btn").addClass("pull-right").removeClass('pull-left');
   }
   
-   // Responsive button margins on activity page
-  if ($(window).width() < 992) {
-    $(".activity-details .btn").css("margin", '0 15px 15px 0').removeClass('pull-right').addClass('pull-left');
-  } else {
-    $(".activity-details .btn").css("margin", '20px 0 20px 15px').removeClass('pull-left').addClass('pull-right');
-  }
+  // Responsive buttons on activity page
+  if ($(window).width() < 1200) {
+    $('.activity-page .btn-group, .back-button').removeClass('pull-right').addClass('pull-left')
+    $('.activity-page .btn-group').css('margin', '0 15px 0 0')
+    $('.activity-page .btn-group .btn').css('margin', '0')
+    $('.activity-page .back-button').css('margin', '0 0 15px 0') 
+  }  
 
   $(window).resize(function() {
     
@@ -51,18 +52,20 @@ $(document).ready(function() {
 
     // Move buttons on trip page
     if ($(window).width() < 992) {
-      $(".trip-page .edit-trip-btn").css("margin", "0px 15px 20px 0px");
+      $(".trip-page .edit-trip-btn").css("margin", "5px 15px 15px 0px");
       $(".trip-page .edit-trip-btn").removeClass("pull-right").addClass('pull-left');
     } else {
       $(".trip-page .edit-trip-btn").css("margin", "20px 0px 20px 15px");
       $(".trip-page .edit-trip-btn").addClass("pull-right").removeClass('pull-left');
     }
 
-     // Responsive button margins on activity page
     if ($(window).width() < 1200) {
-      $(".activity-details .btn").css("margin", '0 15px 15px 0').removeClass('pull-right').addClass('pull-left');
+      $('.activity-page .btn-group, .back-button').removeClass('pull-right').addClass('pull-left')
+      $('.activity-page .btn-group').css('margin', '0 15px 0 0')
+      $('.activity-page .btn-group .btn').css('margin', '0')
+      $('.activity-page .back-button').css('margin', '0 0 15px 0')
     } else {
-      $(".activity-details .btn").css("margin", '20px 0 20px 15px').removeClass('pull-left').addClass('pull-right');
+      $('.activity-page .btn-group, .back-button').removeClass('pull-left').addClass('pull-right').css('margin', '20px 0 0 15px')
     }
 
   });  
