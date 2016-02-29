@@ -31,9 +31,9 @@
       <div class="form-group">
         <label for="description">Trip description</label>
         <% if @trip %>
-        <textarea class="form-control" name="description"><%=@trip.description%></textarea>
+        <textarea rows='6' class="form-control" name="description"><%=@trip.description%></textarea>
         <% else %>
-        <textarea class="form-control" name="description" placeholder='And that, kids, is how I met your mother.'></textarea>
+        <textarea rows='6' class="form-control" name="description" placeholder='And that, kids, is how I met your mother.'></textarea>
         <% end %>
       </div>
     </div>

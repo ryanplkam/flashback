@@ -1,14 +1,29 @@
-<div class='trip-page'>
+<div class='album-page'>
   <%= erb :'partials/_navbar' %>
   <div class='container below-navbar'>
-    <% @trip.activities.each do |activity| %>
-      <div class="row">
-        <% activity.photos.each do |photo| %>
-          <div class="col-lg-3">
-            <img src="<%=photo.safe_url%>" alt="">
-          </div>
-        <% end %>
+    <div class='row'>
+      <div class='col-lg-6 col-lg-offset-3'>
+        <div class='btn-group'>  
+          <a href="./../<%= @trip.id %>" class='btn btn-primary pull-left'>Back to Trip</a>
+        </div>
       </div>
-    <% end %>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 col-lg-offset-3">
+        <div id='slider'>
+          <% @trip.activities.each do |activity| %>
+            <% activity.photos.each do |photo| %>
+            
+              <img src="<%=photo.safe_url%>" alt="">
+            
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+<script>
+  new IdealImageSlider.Slider('#slider');
+</script>
+

@@ -7,11 +7,11 @@
         <form class="form-horizontal" action="/users/<%=session[:user]%>" method="post">
           <div class="form-group">
             <label class="control-label">About me:</label>
-            <textarea name="about_me" class='form-control about-me'><%= @user.about_me %></textarea>
+            <textarea rows='6' name="about_me" class='form-control about-me'><%= @user.about_me %></textarea>
           </div>
           <div class="form-group">
             <label class="control-label">Quirky fact:</label>
-            <textarea name="quirky_fact" class='form-control quirk-fact'><%= @user.quirky_fact %></textarea>
+            <textarea rows='3' name="quirky_fact" class='form-control quirk-fact'><%= @user.quirky_fact %></textarea>
           </div>
           <div class="form-group">
             <input class="btn btn-success save-button" type="submit" value="Save">

@@ -47,9 +47,9 @@
       <div class="form-group">
         <label for="description">Story</label>
         <% if @activity %>
-        <textarea class="form-control" name="description"><%=@activity.description%></textarea>
+        <textarea rows='6' class="form-control" name="description"><%=@activity.description%></textarea>
         <% else %>
-        <textarea class="form-control" name="description" placeholder="Write about what happened"></textarea>
+        <textarea rows ='6' class="form-control" name="description" placeholder="Write about what happened"></textarea>
         <% end %>
       </div>
     </div>

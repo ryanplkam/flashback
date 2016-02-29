@@ -2,6 +2,7 @@ get '/users/:user_id/trips/:trip_id/activities/:activity_id/photos/new' do
   validate_user_login
   validate_url_relationship(params[:user_id], params[:trip_id],params[:activity_id])
   validate_trip_ownership(params[:trip_id])
+  @activity = Activity.find_by(id: params[:activity_id])
   erb :'photos/new'
 end
 

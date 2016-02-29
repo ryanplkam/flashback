@@ -11,7 +11,7 @@
       <div class="col-md-12 col-sm-12 col-xs-12 personal-info">
         <% if user_login? %>
         <% if session[:user].to_s == params[:user_id] %>
-        <a class='btn btn-primary edit-trip-btn pull-right' href="update">Update</a>
+        <a class='btn btn-primary edit-trip-btn pull-right' href="update">Edit</a>
         <% elsif Friendship.find_by(user_id: session[:user], friend_id: params[:user_id]) %>
         <form action="/users/<%=params[:user_id]%>/delete" method="post">
           <input type="submit" class='btn btn-primary edit-trip-btn pull-right' value="Unfriend">
