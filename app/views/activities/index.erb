@@ -2,10 +2,9 @@
   <%= erb :'partials/_navbar' %>
   <div class='container below-navbar'>
     <div class='row'>
-
       <div class='col-lg-6 activity-details'>
         <div class='row'>
-          <div class='col-lg-8'>
+          <div class='col-lg-8 col-md-12 col-sm-12 col-xs-12'>
             <h2>
               <%= @activity.title %>
               <br>
@@ -22,42 +21,39 @@
               </small>
             </h2>
           </div>
-          <div class='col-lg-4'>
-          <!--   <a class='btn btn-danger pull-right' href='./<%= @activity.id %>/delete'><span class='glyphicon glyphicon-trash'></span></a>
-            <a class='btn btn-primary pull-right' href='./<%= @activity.id %>/update'><span class='glyphicon glyphicon-pencil'></span></a> -->
-            <div class="btn-group pull-right">
-              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-              <i class="glyphicon glyphicon-cog"></i> <span class="caret"></span>
-              </button>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="./<%= @activity.id %>/update">Edit activity</a></li>
-                <li><a href="./<%= @activity.id %>/photos/new">Add photos</a></li>
-                <li><a href="./<%= @activity.id %>/delete">Delete activity</a></li>
-              </ul>
+          <div class='col-lg-4 col-md-12 col-sm-12 col-xs-12'>
+            <div class='pull-right'>
+              <div>
+                <div class="btn-group">
+                  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                  <i class="glyphicon glyphicon-cog"></i> <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="./<%= @activity.id %>/update">Edit activity</a></li>
+                    <li><a href="./<%= @activity.id %>/photos/new">Add photos</a></li>
+                    <li><a href="./<%= @activity.id %>/delete">Delete activity</a></li>
+                  </ul>
+                </div>
+                <a class='btn btn-primary back-button' href='../../<%= @activity.trip.id %>'>Back</a>
+              </div>
             </div>
-            <a class='btn btn-primary back-button pull-right' href='../../<%= @activity.trip.id %>'>Back</a>
           </div>
-
-          
-
-          </div class='col-lg-12'>
-          <p>
-            <%= @activity.description %>
-          </p>
-        </div>
-
-        <div class='col-lg-6 activity-photos'>
-          <div id="slider">
-            <% @activity.photos.each do |photo| %>
-              <img src="<%=photo.safe_url%>" alt="">
-            <% end %>
+          <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
+            <p>
+              <%= @activity.description %>
+            </p>
           </div>
         </div>
-
+      </div>
+      <div class='col-lg-6 activity-photos'>
+        <div id="slider">
+          <% @activity.photos.each do |photo| %>
+          <img src="<%=photo.safe_url%>" alt="">
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </div>
 <script>
   new IdealImageSlider.Slider('#slider');

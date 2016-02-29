@@ -1,9 +1,6 @@
 a:hover {
   text-decoration: none; }
 
-.navbar-toggle {
-  margin-right: 0px; }
-
 html * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
@@ -61,11 +58,17 @@ textarea {
     color: black;
     padding: 60px 0 400px; }
 
+@media screen and (min-width: 1200px) {
+  .trips-page .profile-sidebar {
+    position: fixed; } }
+@media screen and (max-width: 1199px) {
+  .trips-page .profile-sidebar {
+    position: static; } }
 .trips-page .bootcards-cards {
   margin-top: 20px; }
   .trips-page .bootcards-cards a:nth-child(1) {
     color: #777; }
-    .trips-page .bootcards-cards a:nth-child(1) .new-trip-card h1 {
+    .trips-page .bootcards-cards a:nth-child(1) h1 {
       margin-bottom: 20px; }
     .trips-page .bootcards-cards a:nth-child(1) :hover {
       color: #333; }
@@ -87,14 +90,30 @@ textarea {
 .friends-page .bootcards-list {
   padding-top: 20px; }
 
+@media screen and (max-width: 1199px) {
+  .activity-page .activity-details {
+    text-align: center; }
+  .activity-page .pull-right {
+    float: none !important; }
+  .activity-page .btn-group .dropdown-toggle {
+    margin-top: 7px;
+    margin-right: 15px;
+    margin-bottom: 20px; }
+  .activity-page .back-button {
+    margin-top: 7px;
+    margin-bottom: 20px; } }
+@media screen and (min-width: 1200px) {
+  .activity-page .dropdown-menu {
+    float: left !important; }
+  .activity-page .btn-group .dropdown-toggle {
+    margin-top: 20px;
+    margin-right: 15px; }
+  .activity-page .back-button {
+    margin-top: 20px; } }
 .activity-page .activity-photos {
   margin: 20px 0 20px; }
-.activity-page img {
-  width: 100%; }
-.activity-page .btn-group .btn {
-  margin: 20px 0 0 15px; }
-.activity-page .back-button {
-  margin: 20px 0 0 15px; }
+  .activity-page .activity-photos img {
+    width: 100%; }
 
 .album-page .btn-group {
   margin: 20px 0; }
@@ -103,14 +122,30 @@ textarea {
 
 .trip-page {
   /* end timeline styles */ }
-  .trip-page .edit-trip-btn {
-    margin: 20px 0 20px 15px; }
-  .trip-page .col-lg-12:nth-of-type(2) {
-    -webkit-column-count: 2;
-    /* Chrome, Safari, Opera */
-    -moz-column-count: 2;
-    /* Firefox */
-    column-count: 2; }
+  @media screen and (max-width: 767px) {
+    .trip-page .trip-details {
+      text-align: center; }
+    .trip-page .edit-trip-btn {
+      float: none !important;
+      margin: 0 7px; }
+    .trip-page .edit-trip-btns {
+      text-align: center;
+      margin: 12px 0 15px; }
+    .trip-page .trip-description {
+      -webkit-column-count: 1;
+      /* Chrome, Safari, Opera */
+      -moz-column-count: 1;
+      /* Firefox */
+      column-count: 1; } }
+  @media screen and (min-width: 768px) {
+    .trip-page .edit-trip-btn {
+      margin: 20px 0 20px 15px; }
+    .trip-page .trip-description {
+      -webkit-column-count: 2;
+      /* Chrome, Safari, Opera */
+      -moz-column-count: 2;
+      /* Firefox */
+      column-count: 2; } }
   .trip-page .vertical-timeline {
     font-size: 100%;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
