@@ -57,4 +57,12 @@ helpers do
     SALUTS.values[rand(SALUTS.length)]
   end
 
+  def generate_random_photo(trip)
+    activity = trip.activities.sample
+    return "http://i.imgur.com/rat4xOV.jpg" unless activity
+    photo = activity.photos.sample
+    return "http://i.imgur.com/rat4xOV.jpg" unless photo
+    photo.safe_url
+  end
+
 end

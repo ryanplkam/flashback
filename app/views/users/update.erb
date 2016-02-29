@@ -4,7 +4,7 @@
     <%= erb :'partials/_user_profile' %>
     <div class='row'>
       <div class="col-lg-8 col-lg-offset-4">
-        <form class="form-horizontal" action="/users/<%=session[:user]%>" method="post">
+        <form class="form-horizontal" action="/users/<%=params[:user_id]%>" method="post">
           <div class="form-group">
             <label class="control-label">About me:</label>
             <textarea rows='6' name="about_me" class='form-control about-me'><%= @user.about_me %></textarea>
