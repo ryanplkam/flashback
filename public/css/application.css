@@ -39,14 +39,15 @@ textarea {
   padding: 15px 15px; }
 .root-page .navbar-right a {
   border: none; }
-.root-page .blurb h3 {
-  font-weight: 600; }
-.root-page .blurb p {
-  padding-top: 20px;
-  font-style: italic; }
-.root-page .blurb span {
-  padding-top: 50px;
-  font-size: 100px; }
+.root-page .blurb-row {
+  margin-bottom: 50px; }
+  .root-page .blurb-row .blurb h3 {
+    font-weight: 600; }
+    .root-page .blurb-row .blurb h3 small {
+      color: #333; }
+  .root-page .blurb-row .blurb span {
+    padding-top: 50px;
+    font-size: 100px; }
 .root-page .jumbotron {
   background: url("../images/ottawa.jpg") center center;
   width: 100%;
@@ -57,6 +58,8 @@ textarea {
     font-family: 'Roboto Condensed', sans-serif;
     color: black;
     padding: 60px 0 400px; }
+.root-page .navbar-toggle {
+  margin-right: 0px !important; }
 
 @media screen and (min-width: 1200px) {
   .trips-page .profile-sidebar {

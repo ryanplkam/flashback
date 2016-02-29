@@ -67,18 +67,20 @@ textarea {
       border: none;
     }
   }
-
-  .blurb { 
-    h3 {
-      font-weight: 600;
-    }
-    p {
-      padding-top: 20px;
-      font-style: italic;
-    }
-    span {
-      padding-top: 50px;
-      font-size: 100px;
+  
+  .blurb-row {
+    margin-bottom: 50px;
+    .blurb { 
+      h3 {
+        font-weight: 600;
+        small {
+          color: #333;
+        }
+      }
+      span {
+        padding-top: 50px;
+        font-size: 100px;
+      }
     }
   }
 
@@ -94,6 +96,9 @@ textarea {
       color: black;
       padding: 60px 0 400px;
     }
+  }
+  .navbar-toggle {
+    margin-right: 0px!important;
   }
 }
 
