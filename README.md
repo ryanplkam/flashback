@@ -1,8 +1,8 @@
-##Flashback: *Relive the magic of travel*
+#Flashback: *Relive the magic of travel*
 
 Flashback is a responsive travel diary app built by Ryan Kam and Cuong Tran over the course of 3 days for their Lighthouse Labs midterm project. Inspired by a deep conviction that there must be a better way to relive travel memories than flipping through Facebook photo albums, Flashback allows users to commemorate their special memories within an elegant, modern, and fully-responsive UI. 
 
-## Tech used
+# Tech used
 
 Front end
 * Bootstrap
@@ -18,9 +18,9 @@ Other
 * Facebook Login API
 * Cloudinary API
 
-## Description
+# Description
 
-# Trips and Activities
+## Trips and Activities
 
 Trips are the core of the Flashback experience. From South America backpacking to Asia ecotouring to a traditional European escapade, trips are what we most strongly associate with those magical travel memories. In Flashback, trips are represented in card format, making it easy to quickly see key trip information such as the trip location, date, and duration.
 
